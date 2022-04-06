@@ -1,0 +1,31 @@
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_home"
+        android:icon="@android:drawable/btn_star_big_on"
+        android:title="Home"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_scanner"
+        android:icon="@android:drawable/ic_menu_camera"
+        android:title="Scanner"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="Profile"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_ticket"
+        android:icon="@android:drawable/ic_menu_view"
+        android:title="Home"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_live"
+        android:icon="@android:drawable/ic_notification_overlay"
+        android:title="Home"
+        app:showAsAction="always" />
+
+</menu>
