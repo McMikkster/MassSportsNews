@@ -20,12 +20,7 @@ import com.example.masssportsnews.R;
 
 public class TicketFragment extends Fragment {
 
-    private TextView eventName;
-    private TextView ticketDate;
-    private TextView ticketSeat;
-    private TextView ticketView;
-    private TextView ticketTotal;
-    private Button ticketPayBttn;
+
 
 
     public TicketFragment()
@@ -45,23 +40,6 @@ public class TicketFragment extends Fragment {
     {
         super.onViewCreated(view, savedInstanceState);
 
-        eventName = view.findViewById(R.id.eventName);
-        ticketDate = view.findViewById(R.id.ticketDate);
-        ticketSeat = view.findViewById(R.id.ticketSeat);
-        ticketTotal = view.findViewById(R.id.ticketTotal);
-        ticketView = view.findViewById(R.id.ticketView);
-        ticketPayBttn = view.findViewById(R.id.ticketPayBttn);
-
-        ticketPayBttn.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-
-
-
-            }
-        });
 
 
 
