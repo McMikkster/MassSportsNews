@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.masssportsnews.R;
-import com.example.masssportsnews.fragments.HomeFragment;
+import com.example.masssportsnews.fragments.NewsFragment;
 import com.example.masssportsnews.fragments.LiveScoreFragment;
 import com.example.masssportsnews.fragments.ProfileFragment;
 import com.example.masssportsnews.fragments.TicketFragment;
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity
                         fragment = new ProfileFragment();
                         break;
                     default:
-                        fragment = new HomeFragment();
+                        fragment = new NewsFragment();
                         break;
                 }
 
