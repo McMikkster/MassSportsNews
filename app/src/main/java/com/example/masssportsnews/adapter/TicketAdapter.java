@@ -31,7 +31,7 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder
     @Override
     public TicketAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
-return null;
+    return null;
     }
 
     @Override
