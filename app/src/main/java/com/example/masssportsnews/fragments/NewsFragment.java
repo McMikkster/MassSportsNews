@@ -17,6 +17,7 @@ import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.masssportsnews.R;
 import com.example.masssportsnews.adapter.LiveAdapter;
+import com.example.masssportsnews.adapter.NewsAdapter;
 import com.example.models.LiveScore;
 import com.example.models.News;
 
@@ -33,8 +34,8 @@ public class NewsFragment extends Fragment {
     public static final String API_KEY = "https://api.nytimes.com/svc/topstories/v2/sports.json?api-key=0yN0D0bpaK0jpx9smLbhRzVRpuvqQd9p";
     public static final String TAG = "NewsFragment";
     RecyclerView rvNews;
-    LiveAdapter newsAdapter;
-    List<LiveScore> newsList;
+    NewsAdapter newsAdapter;
+    List<News> newsList;
 
 
     public NewsFragment() {
@@ -71,7 +72,7 @@ public class NewsFragment extends Fragment {
 
         rvNews = view.findViewById(R.id.rvNews);
 
-        newsAdapter = new LiveAdapter(getContext(), newsList);
+        newsAdapter = new NewsAdapter(getContext(), newsList);
 
         rvNews.setAdapter(newsAdapter);
 
