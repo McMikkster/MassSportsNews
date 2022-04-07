@@ -1,57 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.masssportsnews.fragments.TicketFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.example.masssportsnews.fragments.TicketFragment" >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/eventName"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLiveScores"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Event Name :"
-        android:textSize="48sp" />
+        android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/ticketDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Date/Time :"
-        android:textSize="48sp" />
-
-    <TextView
-        android:id="@+id/ticketSeat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Seat Number(s) :"
-        android:textSize="48sp" />
-
-    <TextView
-        android:id="@+id/ticketView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Seat View :"
-        android:textSize="48sp" />
-
-    <TextView
-        android:id="@+id/ticketTotal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Total :"
-        android:textSize="34sp" />
-
-    <Button
-        android:id="@+id/ticketPayBttn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Pay" />
-
-</LinearLayout>
+</FrameLayout>
