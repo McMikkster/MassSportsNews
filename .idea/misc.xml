@@ -14,9 +14,19 @@
         <entry key="..\:/Users/jacotste/AndroidStudioProjects/MassSportsNews/app/src/main/res/layout/item_news.xml" value="0.3729166666666667" />
         <entry key="..\:/Users/jacotste/AndroidStudioProjects/MassSportsNews/app/src/main/res/layout/item_ticket.xml" value="0.26197916666666665" />
         <entry key="..\:/Users/jacotste/AndroidStudioProjects/MassSportsNews/app/src/main/res/layout/ticketnavigationview.xml" value="0.3729166666666667" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_live_score.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_news.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_ticket.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/home_rv.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/item_live_score.xml" value="0.25104166666666666" />
         <entry key="app/src/main/res/layout/item_news.xml" value="0.25104166666666666" />
         <entry key="app/src/main/res/layout/item_ticket.xml" value="0.25104166666666666" />
+        <entry key="app/src/main/res/layout/signup.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/ticketnavigationview.xml" value="0.3098958333333333" />
       </map>
     </option>
   </component>
