@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -23,6 +24,8 @@ public class LoginActivity extends AppCompatActivity
     EditText tvUsername;
     EditText tvPassword;
 
+    Button btnSignup;
+
     MaterialButton btnSignin;
 
     protected void onCreate(Bundle savedInstance)
@@ -40,6 +43,17 @@ public class LoginActivity extends AppCompatActivity
         tvPassword = findViewById(R.id.tvPassword);
 
         btnSignin = findViewById(R.id.btnSignin);
+
+        btnSignup = findViewById(R.id.btnSignup);
+
+        btnSignup.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                goSignup();
+            }
+        });
 
         btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +94,13 @@ public class LoginActivity extends AppCompatActivity
     private void goMainActivity()
     {
         Intent i = new Intent(this,MainActivity.class);
+        startActivity(i);
+        finish();
+    }
+
+    private void goSignup()
+    {
+        Intent i = new Intent(this, SignUp.class);
         startActivity(i);
         finish();
     }
