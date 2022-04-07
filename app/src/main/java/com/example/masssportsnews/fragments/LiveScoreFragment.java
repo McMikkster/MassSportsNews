@@ -80,7 +80,7 @@ public class LiveScoreFragment extends Fragment {
         liveScoreList = new ArrayList<>();
 
 
-        rvLiveScores = view.findViewById(R.id.rvLiveScores);
+        rvLiveScores = view.findViewById(R.id.rvLiveScore);
 
         liveAdapter = new LiveAdapter(getContext(), liveScoreList);
 

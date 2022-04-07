@@ -17,27 +17,18 @@
         android:textSize="48sp" />
 
     <TextView
-        android:id="@+id/ticketDate"
+        android:id="@+id/ticketStart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Date/Time :"
+        android:hint="Sale Start :"
         android:textSize="48sp" />
-
     <TextView
-        android:id="@+id/ticketSeat"
+        android:id="@+id/ticketEnd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Seat Number(s) :"
-        android:textSize="48sp" />
-
-    <TextView
-        android:id="@+id/ticketView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Seat View :"
+        android:hint="Sale End :"
         android:textSize="48sp" />
 
     <TextView

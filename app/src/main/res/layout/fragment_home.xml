@@ -14,7 +14,7 @@
         tools:src="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/action_title"
+        android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -22,7 +22,7 @@
         android:textSize="48sp" />
 
     <TextView
-        android:id="@+id/action_description"
+        android:id="@+id/tvAbstract"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
