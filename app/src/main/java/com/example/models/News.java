@@ -12,6 +12,7 @@ public class News {
     String description;
     String byline;
     String createdDate;
+    String subsection;
 
     public News() {}
 
@@ -21,6 +22,7 @@ public class News {
         description = jsonObject.getString("abstract");
         byline = jsonObject.getString("byline");
         createdDate = jsonObject.getString("created_date");
+        subsection = jsonObject.getString("subsection");
     }
 
     public static List<News> fromJSONArray(JSONArray newsJsonArray) throws JSONException
@@ -28,6 +30,7 @@ public class News {
         List<News> newsList = new ArrayList<>();
         for(int i = 0; i < newsJsonArray.length(); i++)
         {
+            if(newsJsonArray.get(i))
             newsList.add(new News(newsJsonArray.getJSONObject(i)));
         }
         return newsList;
@@ -47,5 +50,9 @@ public class News {
 
     public String getCreatedDate() {
         return createdDate;
+    }
+
+    public String getSubsection() {
+        return subsection;
     }
 }
