@@ -30,7 +30,6 @@ public class News {
         List<News> newsList = new ArrayList<>();
         for(int i = 0; i < newsJsonArray.length(); i++)
         {
-            if(newsJsonArray.get(i))
             newsList.add(new News(newsJsonArray.getJSONObject(i)));
         }
         return newsList;
