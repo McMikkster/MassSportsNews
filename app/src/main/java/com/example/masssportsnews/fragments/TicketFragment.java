@@ -28,6 +28,7 @@ import com.example.models.Ticket;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,19 +81,30 @@ public class TicketFragment extends Fragment {
             {
                 Log.d(TAG,"Onsucess");
 
-                JSONArray results = json.jsonArray;
+                JSONObject jsonObject = json.jsonObject;
 
                 try {
-                    Log.i(TAG,"Results: " + results.toString());
-                    ticketList.addAll(Ticket.fromJSONArray(results));
-                    ticketAdapter.notifyDataSetChanged();
-                    Log.i(TAG,"TicketList : " + ticketList.size());
-
-                } catch (JSONException e)
-                {
-                    Log.e(TAG,"Hit json exception",e);
-                    e.printStackTrace();
+                    JSONArray event = jsonObject.getJSONArray("events");
+                    Log.i(TAG, "Event" + event.toString());
+                    ticketList = Ticket.fromJSONArray(event);
+                    Log.i(TAG, "Ticket : " + ticketList.size());
+                } catch (JSONException e) {
+                    Log.e(TAG, "Hit Json Exception", e);
                 }
+
+                // JSONArray results = json.jsonArray;
+
+//                try {
+//                    Log.d(TAG,"Results: " + results.toString());
+//                    ticketList.addAll(Ticket.fromJSONArray(results));
+//                    ticketAdapter.notifyDataSetChanged();
+//                    Log.i(TAG,"TicketList : " + ticketList.size());
+//
+//                } catch (JSONException e)
+//                {
+//                    Log.e(TAG,"Hit json exception",e);
+//                    e.printStackTrace();
+//                }
             }
 
             @Override
@@ -102,8 +114,13 @@ public class TicketFragment extends Fragment {
             }
         });
 
+    }
 
-
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+        getActivity().finish();
     }
 
 
