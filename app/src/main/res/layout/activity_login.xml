@@ -88,18 +88,14 @@
 
         </FrameLayout>
 
-        <FrameLayout
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSignup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp">
+            android:backgroundTint="#737373"
+            android:text="Sign Up"
+            app:cornerRadius="10dp" />
 
-            <Button
-                android:id="@+id/btnSignup"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#737373"
-                android:text="Sign Up" />
-        </FrameLayout>
 
     </LinearLayout>
 </ScrollView>

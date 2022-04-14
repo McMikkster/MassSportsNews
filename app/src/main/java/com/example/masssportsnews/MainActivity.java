@@ -42,18 +42,18 @@ public class MainActivity extends AppCompatActivity
                 switch(item.getItemId())
                 {
                     case R.id.action_ticket:
-                        Toast.makeText(MainActivity.this, "Tickets!",Toast.LENGTH_SHORT).show();
                         fragment = new TicketFragment();
                         break;
                     case R.id.action_live:
-                        Toast.makeText(MainActivity.this, "Live!", Toast.LENGTH_SHORT).show();
                         fragment = new LiveScoreFragment();
                         break;
 
                     case R.id.action_profile:
-                        Toast.makeText(MainActivity.this, "Profile!", Toast.LENGTH_SHORT).show();
                         fragment = new ProfileFragment();
                         break;
+//                    case R.id.action_scanner:
+//                        fragment = new ScannerFragment();
+//                        break;
                     default:
                         fragment = new NewsFragment();
                         break;

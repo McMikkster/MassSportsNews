@@ -1,31 +1,42 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/action_home"
-        android:icon="@android:drawable/btn_star_big_on"
-        android:title="Home"
-        app:showAsAction="always" />
-    <item
-        android:id="@+id/action_scanner"
-        android:icon="@android:drawable/ic_menu_camera"
-        android:title="Scanner"
-        app:showAsAction="always" />
-    <item
-        android:id="@+id/action_profile"
-        android:icon="@android:drawable/ic_menu_myplaces"
-        android:title="Profile"
-        app:showAsAction="always" />
+
     <item
         android:id="@+id/action_ticket"
         android:icon="@android:drawable/ic_menu_view"
-        android:title="Home"
+        android:title="Tickets"
+        android:iconTint="@color/black"
         app:showAsAction="always" />
+
 
     <item
         android:id="@+id/action_live"
         android:icon="@android:drawable/ic_notification_overlay"
+        android:title="Live"
+        android:iconTint="@color/black"
+        app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/instagram_home_outline_24"
         android:title="Home"
+        android:iconTint="@color/black"
+        app:showAsAction="always" />
+
+    <item
+    android:id="@+id/action_scanner"
+    android:icon="@android:drawable/ic_menu_camera"
+    android:iconTint="@color/black"
+    android:title="Scanner"
+    app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/instagram_user_outline_24"
+        android:iconTint="@color/black"
+        android:title="Profile"
         app:showAsAction="always" />
 
 </menu>
