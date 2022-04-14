@@ -38,7 +38,7 @@ import okhttp3.Headers;
 public class TicketFragment extends Fragment {
 
     RecyclerView rvTicket;
-    public static final String API_KEY = "https://www.eventbrite.com/api/v3/events/EVENT_ID/ticket_classes/?token=S6F7DYK72CI7DVZUBBSY";
+    public static final String API_KEY = "https://api.seatgeek.com/2/events?client_id=MjY1MjI4NzV8MTY0OTc3NDc3OS4yNDY4NjIy";
     public static final String TAG = "TicketFragment";
 
     TicketAdapter ticketAdapter;

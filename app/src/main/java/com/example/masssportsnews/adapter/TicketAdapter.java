@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.masssportsnews.R;
-import com.example.models.LiveScore;
 import com.example.models.Ticket;
 
 import java.util.List;
@@ -53,10 +52,8 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView eventName;
-        private TextView ticketStart;
-        private TextView ticketEnd;
-        private TextView ticketSeat;
+        private TextView eventTitle;
+        private TextView ticketAddress;
         private TextView ticketTotal;
         private Button ticketPayBtn;
 
@@ -64,9 +61,8 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder
             super(itemView);
 
 
-            eventName = itemView.findViewById(R.id.eventName);
-            ticketStart = itemView.findViewById(R.id.ticketStart);
-            ticketEnd = itemView.findViewById(R.id.ticketEnd);
+            eventTitle = itemView.findViewById(R.id.eventTitle);
+            ticketAddress = itemView.findViewById(R.id.ticketAddress);
             ticketTotal = itemView.findViewById(R.id.ticketTotal);
             ticketPayBtn = itemView.findViewById(R.id.ticketPayBttn);
 
@@ -85,11 +81,9 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder
 
         public void bind(Ticket ticket)
         {
-            eventName.setText(ticket.getName());
+            eventTitle.setText(ticket.getTitle());
 
-            ticketStart.setText(ticket.getStartSale());
-
-            ticketEnd.setText(ticket.getEndSale());
+            ticketAddress.setText(ticket.getAddress());
 
             ticketTotal.setText(ticket.getTicketCost());
 
