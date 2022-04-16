@@ -70,7 +70,6 @@ public class NewsFragment extends Fragment {
 
         newsList = new ArrayList<>();
 
-
         rvNews = view.findViewById(R.id.rvNews);
 
         newsAdapter = new NewsAdapter(getContext(), newsList);

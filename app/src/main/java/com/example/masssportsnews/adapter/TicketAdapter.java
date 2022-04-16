@@ -17,9 +17,6 @@ import java.util.List;
 
 public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder>
 {
-
-    @NonNull
-
     Context context;
     List<Ticket> ticketList;
 
@@ -28,7 +25,7 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder
         this.context = context;
         this.ticketList = ticketList;
     }
-
+    @NonNull
     @Override
     public TicketAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
@@ -46,37 +43,23 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder
     @Override
     public int getItemCount()
     {
-        return 0;
+        return ticketList.size();
     }
-
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView eventTitle;
-        private TextView ticketAddress;
-        private TextView ticketTotal;
-        private Button ticketPayBtn;
+        TextView eventTitle;
+        TextView ticketAddress;
+        TextView ticketTotal;
+        Button ticketPayBtn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
 
             eventTitle = itemView.findViewById(R.id.eventTitle);
             ticketAddress = itemView.findViewById(R.id.ticketAddress);
             ticketTotal = itemView.findViewById(R.id.ticketTotal);
             ticketPayBtn = itemView.findViewById(R.id.ticketPayBttn);
-
-            ticketPayBtn.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View view)
-                {
-
-
-
-                }
-            });
-
         }
 
         public void bind(Ticket ticket)
@@ -85,7 +68,7 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder
 
             ticketAddress.setText(ticket.getAddress());
 
-            ticketTotal.setText(ticket.getTicketCost());
+            ticketTotal.setText(" "+ ticket.getTicketCost());
 
         }
     }

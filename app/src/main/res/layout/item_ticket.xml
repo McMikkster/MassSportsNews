@@ -9,7 +9,7 @@
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/eventTitle"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Event Name :"
@@ -17,7 +17,7 @@
 
     <TextView
         android:id="@+id/ticketAddress"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Sale End :"
@@ -25,7 +25,7 @@
 
     <TextView
         android:id="@+id/ticketTotal"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Total :"

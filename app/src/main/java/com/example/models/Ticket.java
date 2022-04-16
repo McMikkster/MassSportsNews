@@ -14,7 +14,7 @@ public class Ticket
 
     String title;
 
-    String ticketCost;
+    int ticketCost;
 
     String address;
 
@@ -27,9 +27,9 @@ public class Ticket
     {
         title = jsonObject.getString("title");
 
-        ticketCost = jsonObject.getString("average_price");
+        ticketCost = jsonObject.optInt("average_price");
 
-        address = jsonObject.getString("address");
+        address = jsonObject.optString("address");
 
     }
 
@@ -48,7 +48,7 @@ public class Ticket
         return title;
     }
 
-    public String getTicketCost()
+    public int getTicketCost()
     {
         return ticketCost;
     }
