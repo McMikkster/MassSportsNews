@@ -67,19 +67,12 @@ public class NewsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
     {
         super.onViewCreated(view, savedInstanceState);
-
         newsList = new ArrayList<>();
-
         rvNews = view.findViewById(R.id.rvNews);
-
         newsAdapter = new NewsAdapter(getContext(), newsList);
-
         rvNews.setAdapter(newsAdapter);
-
         rvNews.setLayoutManager(new LinearLayoutManager(getContext()));
-
         AsyncHttpClient client = new AsyncHttpClient();
-
         client.get(API_KEY, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Headers headers, JSON json) {
@@ -92,15 +85,12 @@ public class NewsFragment extends Fragment {
 
                     newsList.addAll(News.fromJSONArray(results));
 
-
-
                     newsAdapter.notifyDataSetChanged();
                     Log.i(TAG, "Movies: " + newsList.size());
                 } catch (JSONException e) {
                     Log.e(TAG, "Hit json exception", e);
                     e.printStackTrace();
                 }
-
             }
 
             @Override

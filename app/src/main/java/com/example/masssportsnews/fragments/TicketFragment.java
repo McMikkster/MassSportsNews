@@ -44,14 +44,6 @@ public class TicketFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static TicketFragment newInstance(String param1, String param2) {
-        TicketFragment fragment = new TicketFragment();
-        Bundle args = new Bundle();
-
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,7 +78,6 @@ public class TicketFragment extends Fragment {
             {
                 Log.d(TAG,"Onsucess");
                 JSONObject jsonObject = json.jsonObject;
-
                 try {
                     JSONArray event = jsonObject.getJSONArray("events");
                     for(int i = 0; i < event.length(); i++){
@@ -97,7 +88,7 @@ public class TicketFragment extends Fragment {
                         String address = venue.optString("address");
                     }
                     Log.i(TAG, "Event" + event.toString());
-                    ticketList = Ticket.fromJSONArray(event);
+                    ticketList.equals(Ticket.fromJSONArray(event));
                     Log.i(TAG, "Ticket : " + ticketList.size());
 
                     ticketList.addAll(Ticket.fromJSONArray(event));
