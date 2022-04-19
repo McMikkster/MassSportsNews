@@ -12,11 +12,15 @@ import java.util.List;
 public class Ticket
 {
 
-    String title;
+    String name;
 
-    int ticketCost;
+    String ticketCost;
 
-    String address;
+    String startSale;
+
+    String endSale;
+
+    boolean isFree;
 
     public Ticket()
     {
@@ -25,11 +29,16 @@ public class Ticket
 
     public Ticket(JSONObject jsonObject) throws JSONException
     {
-        title = jsonObject.getString("title");
+        name = jsonObject.getString("name");
 
-        ticketCost = jsonObject.optInt("average_price");
+        isFree = jsonObject.getBoolean("free");
 
-        address = jsonObject.optString("address");
+        ticketCost = jsonObject.getString("cost");
+
+        startSale = jsonObject.getString("sales_start");
+
+        endSale = jsonObject.getString("sales_end");
+
 
     }
 
@@ -43,18 +52,29 @@ public class Ticket
         return ticketList;
     }
 
-    public String getTitle()
+    public String getName()
     {
-        return title;
+        return name;
     }
 
-    public int getTicketCost()
+    public String getTicketCost()
     {
         return ticketCost;
     }
 
-    public String getAddress() {
-        return address;
+    public String getStartSale()
+    {
+        return startSale;
+    }
+
+    public String getEndSale()
+    {
+        return endSale;
+    }
+
+    public boolean isFree()
+    {
+        return isFree;
     }
 
 

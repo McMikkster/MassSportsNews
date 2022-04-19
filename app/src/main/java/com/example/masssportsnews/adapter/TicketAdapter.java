@@ -11,12 +11,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.masssportsnews.R;
+import com.example.models.LiveScore;
 import com.example.models.Ticket;
 
 import java.util.List;
 
 public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder>
 {
+
+    @NonNull
+
     Context context;
     List<Ticket> ticketList;
 
@@ -25,7 +29,7 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder
         this.context = context;
         this.ticketList = ticketList;
     }
-    @NonNull
+
     @Override
     public TicketAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
@@ -43,32 +47,51 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder
     @Override
     public int getItemCount()
     {
-        return ticketList.size();
+        return 0;
     }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView eventTitle;
-        TextView ticketAddress;
-        TextView ticketTotal;
-        Button ticketPayBtn;
+        private TextView eventName;
+        private TextView ticketStart;
+        private TextView ticketEnd;
+        private TextView ticketSeat;
+        private TextView ticketTotal;
+        private Button ticketPayBtn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            eventTitle = itemView.findViewById(R.id.eventTitle);
-            ticketAddress = itemView.findViewById(R.id.ticketAddress);
+
+            eventName = itemView.findViewById(R.id.eventName);
+            ticketStart = itemView.findViewById(R.id.ticketStart);
+            ticketEnd = itemView.findViewById(R.id.ticketEnd);
             ticketTotal = itemView.findViewById(R.id.ticketTotal);
             ticketPayBtn = itemView.findViewById(R.id.ticketPayBttn);
+
+            ticketPayBtn.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view)
+                {
+
+
+
+                }
+            });
+
         }
 
         public void bind(Ticket ticket)
         {
-            eventTitle.setText(ticket.getTitle());
+            eventName.setText(ticket.getName());
 
-            ticketAddress.setText(ticket.getAddress());
+            ticketStart.setText(ticket.getStartSale());
 
-            ticketTotal.setText(" "+ ticket.getTicketCost());
+            ticketEnd.setText(ticket.getEndSale());
+
+            ticketTotal.setText(ticket.getTicketCost());
 
         }
     }
