@@ -22,13 +22,19 @@ public class Ticket
 
     boolean isFree;
 
+   // JSONObject embedded;
+    //JSONArray events;
     public Ticket()
     {
         //Empty constructor
     }
-
     public Ticket(JSONObject jsonObject) throws JSONException
     {
+
+//         embedded = jsonObject.getJSONObject("_embedded");
+//
+//         events = embedded.getJSONArray("events");
+
         name = jsonObject.getString("name");
 
         isFree = jsonObject.getBoolean("free");

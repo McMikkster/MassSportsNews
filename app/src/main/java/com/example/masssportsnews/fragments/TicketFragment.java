@@ -86,34 +86,51 @@ public class TicketFragment extends Fragment {
                 try {
 
                     JSONObject embedded = jsonObject.getJSONObject("_embedded");
+                            JSONArray events = embedded.getJSONArray("events");
+                    int minimumPrice = events.getJSONObject(7).getJSONArray("priceRanges").getJSONObject(0).getInt("min");
 
-                    JSONArray events = embedded.getJSONArray("events");
+                    for(int i = 0; i <events.length(); i++) {
+                        JSONObject genre = events.getJSONObject(i).getJSONArray("classifications").getJSONObject(0).getJSONObject("genre");
 
-                    for(int i = 0; i < events.length(); i++)
-                    {
 
-                        JSONArray classification = events.getJSONObject(i).getJSONArray("classification");
+                        if(!genre.getString("name").equals("Rock") && !genre.getString("name").equals("Fairs & Festivals")){
+                            //JSONArray priceRanges = events.getJSONArray(i);
 
-                        if(classification != null)
-                        {
-                            JSONObject genre = classification.getJSONObject(0);
+                            String name = events.getJSONObject(i).getString("name");
 
-                            if(!genre.getString("name").equals("Rock") && !genre.getString("name").equals("Fairs & Festivals"))
-                            {
-                                JSONArray priceRanges = events.getJSONArray(i);
+                            Log.i(TAG,"[name: " + name.toString() + "]genre : " + genre.toString());
 
-                                if(priceRanges != null)
-                                {
-                                    JSONObject price = priceRanges.getJSONObject(0);
-                                }
-                            }
                         }
 
-
                     }
+                    Log.i(TAG, " [min: " + minimumPrice + "]");
+
+//                    for(int i = 0; i < events.length(); i++)
+//                    {
+//
+//                        JSONArray classification = events.getJSONObject(i).getJSONArray("classification");
+//
+//                        if(classification != null)
+//                        {
+//                            JSONObject genre = classification.getJSONObject(0);
+//
+//                            if(!genre.getString("name").equals("Rock") && !genre.getString("name").equals("Fairs & Festivals"))
+//                            {
+//                                JSONArray priceRanges = events.getJSONArray(i);
+//
+//                                if(priceRanges != null)
+//                                {
+//                                    JSONObject price = priceRanges.getJSONObject(0);
+//                                }
+//                            }
+//                        }
+//
+//
+//                    }
 
                     ticketAdapter.notifyDataSetChanged();
                     Log.i(TAG,"TicketList : " + ticketList.size());
+
 
                 } catch (JSONException e)
                 {
