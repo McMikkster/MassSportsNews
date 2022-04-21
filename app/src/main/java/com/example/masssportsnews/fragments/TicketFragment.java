@@ -83,27 +83,41 @@ public class TicketFragment extends Fragment {
 
                 JSONObject jsonObject = json.jsonObject;
 
+                int minimumPrice;
+
                 try {
 
                     JSONObject embedded = jsonObject.getJSONObject("_embedded");
                             JSONArray events = embedded.getJSONArray("events");
-                    int minimumPrice = events.getJSONObject(7).getJSONArray("priceRanges").getJSONObject(0).getInt("min");
 
                     for(int i = 0; i <events.length(); i++) {
                         JSONObject genre = events.getJSONObject(i).getJSONArray("classifications").getJSONObject(0).getJSONObject("genre");
 
-
                         if(!genre.getString("name").equals("Rock") && !genre.getString("name").equals("Fairs & Festivals")){
                             //JSONArray priceRanges = events.getJSONArray(i);
-
                             String name = events.getJSONObject(i).getString("name");
 
-                            Log.i(TAG,"[name: " + name.toString() + "]genre : " + genre.toString());
+                            if(events.getJSONObject(i).has("priceRanges"))
+                            {
+
+//                                String name = events.getJSONObject(i).getString("name");
+                                minimumPrice = events.getJSONObject(i).getJSONArray("priceRanges").getJSONObject(0).getInt("min");
+
+                                Log.i(TAG,"[name: " + name.toString() + "]genre : " + genre.toString() + " [min: $" + minimumPrice + "]");
+                                //Log.i(TAG, " [min: " + minimumPrice + "]");
+                            } else
+                            {
+                                minimumPrice = 75;
+
+                                Log.i(TAG,"[name: " + name.toString() + "]genre : " + genre.toString() + " [min: $" + minimumPrice + "]");
+                            }
+
+
 
                         }
 
                     }
-                    Log.i(TAG, " [min: " + minimumPrice + "]");
+                  //  Log.i(TAG, " [min: " + minimumPrice + "]");
 
 //                    for(int i = 0; i < events.length(); i++)
 //                    {
