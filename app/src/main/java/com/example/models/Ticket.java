@@ -1,5 +1,9 @@
 package com.example.models;
 
+import android.util.Log;
+
+import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,8 +26,7 @@ public class Ticket
 
     boolean isFree;
 
-   // JSONObject embedded;
-    //JSONArray events;
+
     public Ticket()
     {
         //Empty constructor
@@ -31,13 +34,35 @@ public class Ticket
     public Ticket(JSONObject jsonObject) throws JSONException
     {
 
-//         embedded = jsonObject.getJSONObject("_embedded");
-//
-//         events = embedded.getJSONArray("events");
+        for(int i = 0; i < jsonObject.length(); i++)
+        {
+            name = jsonObject.getJSONObject(String.valueOf(i)).getString("name");
+        }
 
-        name = jsonObject.getString("name");
+        int minimumPrice;
 
-        isFree = jsonObject.getBoolean("free");
+        String dates;
+
+        JSONObject genre = jsonObject.getJSONArray("classifications").getJSONObject(0).getJSONObject("genre");
+
+            if (!genre.getString("name").equals("Rock") && !genre.getString("name").equals("Fairs & Festivals")) {
+
+                String name = events.getJSONObject(i).getString("name");
+
+                if (events.getJSONObject(i).has("priceRanges")) {
+
+//                                String name = events.getJSONObject(i).getString("name");
+                    minimumPrice = events.getJSONObject(i).getJSONArray("priceRanges").getJSONObject(0).getInt("min");
+
+                    dates = events.getJSONObject(i).getJSONObject("dates").getJSONObject("start").getString("localDate");
+
+                    //Log.i(TAG, " [min: " + minimumPrice + "]");
+                } else {
+                    minimumPrice = 75;
+
+                }
+            }
+        }
 
         ticketCost = jsonObject.getString("cost");
 
@@ -48,14 +73,24 @@ public class Ticket
 
     }
 
-    public static List<Ticket> fromJSONArray(JSONArray ticketJsonArray) throws JSONException
+    public static List<Ticket> fromJSONArray(JSONArray ticketList) throws JSONException
     {
-        List<Ticket> ticketList = new ArrayList<>();
-        for(int i = 0; i < ticketJsonArray.length(); i++)
+        List<Ticket> tickets = new ArrayList<>();
+
+        for(int i = 0; i < ticketList.length(); i++)
         {
-            ticketList.add(new Ticket(ticketJsonArray.getJSONObject(i)));
+            Ticket ticket = new Ticket(ticketList.getJSONObject(i));
+
         }
-        return ticketList;
+
+        return tickets;
+
+//        List<Ticket> ticketList = new ArrayList<>();
+//        for(int i = 0; i < ticketJsonArray.length(); i++)
+//        {
+//            ticketList.add(new Ticket(ticketJsonArray.getJSONObject(i)));
+//        }
+//        return ticketList;
     }
 
     public String getName()
