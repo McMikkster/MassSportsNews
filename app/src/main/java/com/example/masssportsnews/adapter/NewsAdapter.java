@@ -61,6 +61,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
 
         public void bind(News news) {
 
+            tvTitle.setText(news.getTitle());
+            tvAbstract.setText(news.getDescription());
+            tvByline.setText(news.getByline());
+            tvPublishedDate.setText(news.getCreatedDate());
+
 
         }
     }

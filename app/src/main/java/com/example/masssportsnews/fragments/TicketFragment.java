@@ -28,6 +28,7 @@ import com.example.models.Ticket;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +39,7 @@ import okhttp3.Headers;
 public class TicketFragment extends Fragment {
 
     RecyclerView rvTicket;
-    public static final String API_KEY = "https://www.eventbrite.com/api/v3/events/EVENT_ID/ticket_classes/?token=S6F7DYK72CI7DVZUBBSY";
+    public static final String API_KEY = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=Qirum071LVfXmJxgaBK6c4Z1GRkMRbjP";
     public static final String TAG = "TicketFragment";
 
     TicketAdapter ticketAdapter;
@@ -80,13 +81,70 @@ public class TicketFragment extends Fragment {
             {
                 Log.d(TAG,"Onsucess");
 
-                JSONArray results = json.jsonArray;
+                JSONObject jsonObject = json.jsonObject;
+
+                int minimumPrice;
 
                 try {
-                    Log.i(TAG,"Results: " + results.toString());
-                    ticketList.addAll(Ticket.fromJSONArray(results));
+
+                    JSONObject embedded = jsonObject.getJSONObject("_embedded");
+                            JSONArray events = embedded.getJSONArray("events");
+
+                    for(int i = 0; i <events.length(); i++) {
+                        JSONObject genre = events.getJSONObject(i).getJSONArray("classifications").getJSONObject(0).getJSONObject("genre");
+
+                        if(!genre.getString("name").equals("Rock") && !genre.getString("name").equals("Fairs & Festivals")){
+                            //JSONArray priceRanges = events.getJSONArray(i);
+                            String name = events.getJSONObject(i).getString("name");
+
+                            if(events.getJSONObject(i).has("priceRanges"))
+                            {
+
+//                                String name = events.getJSONObject(i).getString("name");
+                                minimumPrice = events.getJSONObject(i).getJSONArray("priceRanges").getJSONObject(0).getInt("min");
+
+                                Log.i(TAG,"[name: " + name.toString() + "]genre : " + genre.toString() + " [min: $" + minimumPrice + "]");
+                                //Log.i(TAG, " [min: " + minimumPrice + "]");
+                            } else
+                            {
+                                minimumPrice = 75;
+
+                                Log.i(TAG,"[name: " + name.toString() + "]genre : " + genre.toString() + " [min: $" + minimumPrice + "]");
+                            }
+
+
+
+                        }
+
+                    }
+                  //  Log.i(TAG, " [min: " + minimumPrice + "]");
+
+//                    for(int i = 0; i < events.length(); i++)
+//                    {
+//
+//                        JSONArray classification = events.getJSONObject(i).getJSONArray("classification");
+//
+//                        if(classification != null)
+//                        {
+//                            JSONObject genre = classification.getJSONObject(0);
+//
+//                            if(!genre.getString("name").equals("Rock") && !genre.getString("name").equals("Fairs & Festivals"))
+//                            {
+//                                JSONArray priceRanges = events.getJSONArray(i);
+//
+//                                if(priceRanges != null)
+//                                {
+//                                    JSONObject price = priceRanges.getJSONObject(0);
+//                                }
+//                            }
+//                        }
+//
+//
+//                    }
+
                     ticketAdapter.notifyDataSetChanged();
                     Log.i(TAG,"TicketList : " + ticketList.size());
+
 
                 } catch (JSONException e)
                 {
