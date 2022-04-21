@@ -1,6 +1,9 @@
 package com.example.masssportsnews;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.parse.ParseException;
+import com.parse.ParseUser;
+import com.parse.SignUpCallback;
 
 import android.os.Bundle;
 
@@ -11,5 +14,6 @@ public class SignUp extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
     }
 }

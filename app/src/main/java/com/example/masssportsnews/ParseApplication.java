@@ -4,6 +4,9 @@ import android.app.Application;
 
 import com.parse.Parse;
 import com.parse.ParseObject;
+import com.parse.ParseException;
+import com.parse.ParseUser;
+
 
 public class ParseApplication extends Application
 {
