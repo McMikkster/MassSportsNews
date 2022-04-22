@@ -8,34 +8,35 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/eventName"
+        android:id="@+id/tvEventName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Event Name :"
+        android:text="Celtics VS Suns"
         android:textSize="48sp" />
 
     <TextView
-        android:id="@+id/ticketStart"
+        android:id="@+id/tvGenre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Sale Start :"
-        android:textSize="48sp" />
-    <TextView
-        android:id="@+id/ticketEnd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Sale End :"
+        android:text="NBA"
         android:textSize="48sp" />
 
     <TextView
-        android:id="@+id/ticketTotal"
+        android:id="@+id/tvDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Total :"
+        android:text="01/01/2001"
+        android:textSize="48sp" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="$50"
         android:textSize="34sp" />
 
     <Button

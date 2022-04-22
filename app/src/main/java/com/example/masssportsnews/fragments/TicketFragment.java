@@ -88,6 +88,12 @@ public class TicketFragment extends Fragment {
                 {
                     JSONObject embedded = jsonObject.getJSONObject("_embedded");
                     JSONArray events = embedded.getJSONArray("events");
+//                    for(int i = 0; i < jsonObject.length(); i++){
+//                        name = jsonObject.getJSONObject(String.valueOf(i)).getString("name");
+//                    }
+                    //                  String name = events.getJSONObject(i).getString("name");
+
+
                     ticketList.addAll(Ticket.fromJSONArray(events));
                     ticketAdapter.notifyDataSetChanged();
 

@@ -17,61 +17,44 @@ public class Ticket
 {
 
     String name;
-
-    String ticketCost;
-
-    String startSale;
-
-    String endSale;
-
-    boolean isFree;
-
+    int minimumPrice; //getting the minimum within the priceRange
+    String genreName;
+    String dates;
 
     public Ticket()
     {
         //Empty constructor
     }
+
+    public static final String TAG = "Ticket";
     public Ticket(JSONObject jsonObject) throws JSONException
     {
 
-        for(int i = 0; i < jsonObject.length(); i++)
-        {
-            name = jsonObject.getJSONObject(String.valueOf(i)).getString("name");
-        }
-
-        int minimumPrice;
-
-        String dates;
-
+      //  JSONArray classifications= jsonObject.getJSONArray("classifications");
         JSONObject genre = jsonObject.getJSONArray("classifications").getJSONObject(0).getJSONObject("genre");
+        if(genre.isNull("name"))
+            return;
 
-            if (!genre.getString("name").equals("Rock") && !genre.getString("name").equals("Fairs & Festivals")) {
+        if (!genre.getString("name").equals("Rock") && !genre.getString("name").equals("Fairs & Festivals")) {
+                 name = jsonObject.getString("name");
 
-                String name = events.getJSONObject(i).getString("name");
+                 genreName = genre.getString("name");
 
-                if (events.getJSONObject(i).has("priceRanges")) {
+                if (jsonObject.has("priceRanges")) {
 
-//                                String name = events.getJSONObject(i).getString("name");
-                    minimumPrice = events.getJSONObject(i).getJSONArray("priceRanges").getJSONObject(0).getInt("min");
+                    minimumPrice = jsonObject.getJSONArray("priceRanges").getJSONObject(0).getInt("min");
+                    dates = jsonObject.getJSONObject("dates").getJSONObject("start").getString("localDate");
 
-                    dates = events.getJSONObject(i).getJSONObject("dates").getJSONObject("start").getString("localDate");
-
-                    //Log.i(TAG, " [min: " + minimumPrice + "]");
                 } else {
                     minimumPrice = 75;
 
                 }
-            }
+            //Log.i(TAG, "[name: " + name + "] " + "[genre: " + genreName + "] " +" [min: " + minimumPrice + "]");
+
         }
 
-        ticketCost = jsonObject.getString("cost");
-
-        startSale = jsonObject.getString("sales_start");
-
-        endSale = jsonObject.getString("sales_end");
-
-
     }
+
 
     public static List<Ticket> fromJSONArray(JSONArray ticketList) throws JSONException
     {
@@ -80,43 +63,25 @@ public class Ticket
         for(int i = 0; i < ticketList.length(); i++)
         {
             Ticket ticket = new Ticket(ticketList.getJSONObject(i));
-
         }
 
         return tickets;
 
-//        List<Ticket> ticketList = new ArrayList<>();
-//        for(int i = 0; i < ticketJsonArray.length(); i++)
-//        {
-//            ticketList.add(new Ticket(ticketJsonArray.getJSONObject(i)));
-//        }
-//        return ticketList;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public String getTicketCost()
-    {
-        return ticketCost;
+    public int getMinimumPrice() {
+        return minimumPrice;
     }
 
-    public String getStartSale()
-    {
-        return startSale;
+    public String getDates() {
+        return dates;
     }
 
-    public String getEndSale()
-    {
-        return endSale;
+    public String getGenreName() {
+        return genreName;
     }
-
-    public boolean isFree()
-    {
-        return isFree;
-    }
-
-
 }

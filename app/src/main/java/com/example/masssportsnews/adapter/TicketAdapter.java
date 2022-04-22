@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.masssportsnews.R;
-import com.example.models.LiveScore;
 import com.example.models.Ticket;
 
 import java.util.List;
@@ -54,32 +53,31 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView eventName;
-        private TextView ticketStart;
-        private TextView ticketEnd;
-        private TextView ticketSeat;
-        private TextView ticketTotal;
+        private TextView tvGenre;
+        private TextView tvDate;
+        private TextView tvPrice;
         private Button ticketPayBtn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
 
-            eventName = itemView.findViewById(R.id.eventName);
-            ticketStart = itemView.findViewById(R.id.ticketStart);
-            ticketEnd = itemView.findViewById(R.id.ticketEnd);
-            ticketTotal = itemView.findViewById(R.id.ticketTotal);
+            eventName = itemView.findViewById(R.id.tvEventName);
+            tvGenre = itemView.findViewById(R.id.tvGenre);
+            tvDate = itemView.findViewById(R.id.tvDate);
+            tvPrice = itemView.findViewById(R.id.tvPrice);
             ticketPayBtn = itemView.findViewById(R.id.ticketPayBttn);
 
-            ticketPayBtn.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View view)
-                {
-
-
-
-                }
-            });
+//            ticketPayBtn.setOnClickListener(new View.OnClickListener()
+//            {
+//                @Override
+//                public void onClick(View view)
+//                {
+//
+//
+//
+//                }
+//            });
 
         }
 
@@ -87,11 +85,11 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder
         {
             eventName.setText(ticket.getName());
 
-            ticketStart.setText(ticket.getStartSale());
+            tvGenre.setText(ticket.getGenreName());
 
-            ticketEnd.setText(ticket.getEndSale());
+            tvDate.setText(ticket.getDates());
 
-            ticketTotal.setText(ticket.getTicketCost());
+            tvPrice.setText(ticket.getMinimumPrice());
 
         }
     }
