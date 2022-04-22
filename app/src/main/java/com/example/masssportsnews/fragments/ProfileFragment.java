@@ -30,6 +30,7 @@ import com.google.android.material.button.MaterialButton;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,13 +40,7 @@ public class ProfileFragment extends Fragment {
 
     public static final String TAG = "ProfileFragment";
 
-    private TextView tvProfile;
-    private TextView viewFirstName;
-    private TextView viewLastName;
-    private TextView viewEmail;
-    private TextView viewPhoneNumber;
-    private TextView viewPassword;
-    private TextView viewAddress;
+
     MaterialButton btnEditProfile;
 
     RecyclerView rvProfile;
@@ -68,22 +63,16 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//        viewFirstName = view.findViewById(R.id.viewFirstName);
-//        viewLastName = view.findViewById(R.id.viewLastName);
-//        viewEmail = view.findViewById(R.id.viewEmail);
-//        viewPhoneNumber = view.findViewById(R.id.viewEmail);
-//        viewAddress = view.findViewById(R.id.viewAddress);
         rvProfile = view.findViewById(R.id.rvprofile);
-    profileList = new ArrayList<>();
-    profileAdapter = new ProfileAdapter(getContext(), profileList);
-    rvProfile.setAdapter(profileAdapter);
-    rvProfile.setLayoutManager(new LinearLayoutManager(getContext()));
+        profileList = new ArrayList<>();
+        profileAdapter = new ProfileAdapter(getContext(), profileList);
+        rvProfile.setAdapter(profileAdapter);
+        rvProfile.setLayoutManager(new LinearLayoutManager(getContext()));
 
-    queryProfile();
-
+        queryProfile();
     }
 
-    private void queryProfile() {
+    protected void queryProfile() {
 
         ParseQuery<Profile> query = ParseQuery.getQuery(Profile.class);
         query.include(KEY_FIRSTNAME);
@@ -91,20 +80,21 @@ public class ProfileFragment extends Fragment {
         query.include(KEY_EMAIL);
         query.include (KEY_PHONENUMBER);
         query.include(KEY_ADDRESS);
+        query.whereEqualTo(KEY_FIRSTNAME, ParseUser.getCurrentUser());
 
         query.findInBackground(new FindCallback<Profile>() {
             @Override
-            public void done(List<Profile>  profile, ParseException e) {
+            public void done(List<Profile> profile, ParseException e) {
                 if (e != null){
                     Log.e(TAG, "issue with profile", e);
                     return;
                 }
-//                for(Profile profile: profile){
-//                    Log
-//                }
-//
+                for(Profile profile1: profile){
+                    Log.i(TAG, "Profile: " + profile1.getKeyFirstname() + ", username: " + ParseUser.getCurrentUser());
+                }
 
 
+             //   Log.i(TAG, "Profile: " + profile);
                 profileList.addAll(profile);
                 profileAdapter.notifyDataSetChanged();
 

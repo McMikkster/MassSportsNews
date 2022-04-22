@@ -3,13 +3,13 @@ package com.example.models;
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
 
-@ParseClassName("user")
+@ParseClassName("User")
 public class Profile extends ParseObject {
 
-    public static final String KEY_FIRSTNAME = "firstname";
-    public static final String KEY_LASTNAME = "lastname";
+    public static final String KEY_FIRSTNAME = "firstName";
+    public static final String KEY_LASTNAME = "lastName";
     public static final String KEY_EMAIL = "email";
-    public static final String KEY_PHONENUMBER = "phonenumber";
+    public static final String KEY_PHONENUMBER = "phoneNumber";
     public static final String KEY_ADDRESS = "address";
 
     public String getKeyFirstname() {
@@ -46,11 +46,9 @@ public class Profile extends ParseObject {
     public  String getKeyAddress(){
         return getString(KEY_ADDRESS);
     }
-    public void setkeyAddress(String address){
+    public void setKeyAddress(String address){
         put(KEY_ADDRESS, address);
     }
-
-
 
 }
 
