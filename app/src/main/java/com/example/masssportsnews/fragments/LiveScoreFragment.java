@@ -37,7 +37,7 @@ import com.example.masssportsnews.R;
  */
 public class LiveScoreFragment extends Fragment {
 
-    public static final String API_KEY = "https://api.the-odds-api.com/v4/sports/basketball_nba/scores/?daysFrom=1&apiKey=048fe3ba8490aa25f5474157e4b7af8c";
+    public static final String API_KEY = "https://api.the-odds-api.com/v4/sports/basketball_nba/scores/?daysFrom=3&apiKey=737a700203b8a9e190db2568e43a2e11";
     public static final String TAG = "LiveFragment";
     RecyclerView rvLiveScores;
     LiveAdapter liveAdapter;
