@@ -37,11 +37,15 @@ public class LiveScore
         commenceTime = jsonObject.getString("commence_time");
 
 
-        //scores = jsonObject.getJSONArray("scores");
+         if(!jsonObject.getString("last_update").isEmpty()) {
+        homeScore = jsonObject.getJSONArray("scores").getJSONObject(0).getString("score");
+        awayScore = jsonObject.getJSONArray("scores").getJSONObject(1).getString("score");
 
-
-        homeScore = jsonObject.getString("scores");
-        awayScore = jsonObject.getString("scores");
+    }
+    if(jsonObject.getString("last_update").isEmpty()) {
+        homeScore = null;
+        awayScore = null;
+    }
 
 
     }
