@@ -1,6 +1,7 @@
 package com.example.masssportsnews.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +34,8 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder
     public TicketAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
         View view = LayoutInflater.from(context).inflate(R.layout.item_ticket, parent, false);
+        Log.i("TEST", "view created");
+
         return new ViewHolder(view);
     }
 
@@ -41,12 +44,13 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder
     {
         Ticket ticket = ticketList.get(position);
         holder.bind(ticket);
+        Log.i("TEST", "bound ticket: " + ticket.getName());
     }
 
     @Override
     public int getItemCount()
     {
-        return 0;
+        return ticketList.size();
     }
 
 
@@ -89,7 +93,7 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder
 
             tvDate.setText(ticket.getDates());
 
-            tvPrice.setText(ticket.getMinimumPrice());
+            tvPrice.setText(ticket.getMinimumPrice() + "");
 
         }
     }

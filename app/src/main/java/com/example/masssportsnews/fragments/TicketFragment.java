@@ -74,6 +74,8 @@ public class TicketFragment extends Fragment {
         rvTicket.setLayoutManager(new LinearLayoutManager(getContext()));
 
         AsyncHttpClient client = new AsyncHttpClient();
+        Log.i(TAG, "fragment created");
+
 
         client.get(API_KEY, new JsonHttpResponseHandler()
         {
@@ -83,6 +85,7 @@ public class TicketFragment extends Fragment {
             public void onSuccess(int statusCode, Headers headers, JSON json)
             {
                 JSONObject jsonObject = json.jsonObject;
+                Log.i(TAG, "onSuccess");
 
                 try
                 {
@@ -95,6 +98,11 @@ public class TicketFragment extends Fragment {
 
 
                     ticketList.addAll(Ticket.fromJSONArray(events));
+                    Log.i(TAG, "ticket count: " + ticketList.size());
+                    Log.i(TAG, "tickets: " + ticketList);
+                    for (int i = 0; i < ticketList.size(); i++) {
+                        Log.i(TAG, "ticket #" + i + ": " + ticketList.get(i).getGenreName());
+                    }
                     ticketAdapter.notifyDataSetChanged();
 
                 } catch (JSONException e)
@@ -107,7 +115,7 @@ public class TicketFragment extends Fragment {
 
             @Override
             public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
-
+                Log.e(TAG, "exception: " + throwable);
             }
 
 

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -33,12 +34,15 @@ public class MainActivity extends AppCompatActivity
 
         bottomNavigationView = findViewById(R.id.bottomNavigation);
 
+
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener()
         {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item)
             {
                 Fragment fragment;
+
 
                 switch(item.getItemId())
                 {
@@ -60,12 +64,14 @@ public class MainActivity extends AppCompatActivity
                         break;
                 }
 
+
+
                 fragmentManager.beginTransaction().replace(R.id.flContainer,fragment).commit();
 
                 return true;
             }
         });
-
+        bottomNavigationView.setSelectedItemId(R.id.action_ticket);
     }
 
 

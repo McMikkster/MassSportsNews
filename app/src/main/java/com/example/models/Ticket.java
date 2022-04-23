@@ -13,60 +13,58 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Parcel
-public class Ticket
-{
+public class Ticket {
 
     String name;
     int minimumPrice; //getting the minimum within the priceRange
     String genreName;
     String dates;
 
-    public Ticket()
-    {
+    public Ticket() {
         //Empty constructor
     }
 
     public static final String TAG = "Ticket";
-    public Ticket(JSONObject jsonObject) throws JSONException
-    {
 
-      //  JSONArray classifications= jsonObject.getJSONArray("classifications");
+    public Ticket(JSONObject jsonObject) throws JSONException {
+
+        //  JSONArray classifications= jsonObject.getJSONArray("classifications");
         JSONObject genre = jsonObject.getJSONArray("classifications").getJSONObject(0).getJSONObject("genre");
-        if(genre.isNull("name"))
-            return;
+        name = jsonObject.getString("name");
 
-        if (!genre.getString("name").equals("Rock") && !genre.getString("name").equals("Fairs & Festivals")) {
-                 name = jsonObject.getString("name");
+        genreName = genre.getString("name");
 
-                 genreName = genre.getString("name");
+        if (jsonObject.has("priceRanges")) {
 
-                if (jsonObject.has("priceRanges")) {
+            minimumPrice = jsonObject.getJSONArray("priceRanges").getJSONObject(0).getInt("min");
+            dates = jsonObject.getJSONObject("dates").getJSONObject("start").getString("localDate");
 
-                    minimumPrice = jsonObject.getJSONArray("priceRanges").getJSONObject(0).getInt("min");
-                    dates = jsonObject.getJSONObject("dates").getJSONObject("start").getString("localDate");
-
-                } else {
-                    minimumPrice = 75;
-
-                }
-            //Log.i(TAG, "[name: " + name + "] " + "[genre: " + genreName + "] " +" [min: " + minimumPrice + "]");
+        } else {
+            minimumPrice = 75;
 
         }
+        //Log.i(TAG, "[name: " + name + "] " + "[genre: " + genreName + "] " +" [min: " + minimumPrice + "]");
+
 
     }
 
 
-    public static List<Ticket> fromJSONArray(JSONArray ticketList) throws JSONException
-    {
+    public static List<Ticket> fromJSONArray(JSONArray ticketList) throws JSONException {
         List<Ticket> tickets = new ArrayList<>();
 
-        for(int i = 0; i < ticketList.length(); i++)
-        {
-            Ticket ticket = new Ticket(ticketList.getJSONObject(i));
+        for (int i = 0; i < ticketList.length(); i++) {
+            JSONArray classifications = ticketList.getJSONObject(i).getJSONArray("classifications");
+            if (!classifications.isNull(0)) {
+                JSONObject segment = classifications.getJSONObject(0).getJSONObject("segment");
+                if (segment.getString("name").equals("Sports")) {
+                    Log.i(TAG, "segment: " + segment.getString("name"));
+
+                    Ticket ticket = new Ticket(ticketList.getJSONObject(i));
+                    tickets.add(ticket);
+                }
+            }
         }
-
         return tickets;
-
     }
 
     public String getName() {
