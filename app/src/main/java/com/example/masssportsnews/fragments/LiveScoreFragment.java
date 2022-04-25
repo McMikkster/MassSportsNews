@@ -27,6 +27,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.masssportsnews.R;
 
@@ -37,12 +38,11 @@ import com.example.masssportsnews.R;
  */
 public class LiveScoreFragment extends Fragment {
 
-    public static final String API_KEY = "https://api.the-odds-api.com/v4/sports/basketball_nba/scores/?daysFrom=3&apiKey=737a700203b8a9e190db2568e43a2e11";
+    public static  String API_KEY = "https://api.the-odds-api.com/v4/sports/basketball_nba/scores/?daysFrom=3&apiKey=737a700203b8a9e190db2568e43a2e11";
     public static final String TAG = "LiveFragment";
     RecyclerView rvLiveScores;
     LiveAdapter liveAdapter;
     List<LiveScore> liveScoreList;
-
 
     public LiveScoreFragment() {
         // Required empty public constructor
@@ -87,6 +87,7 @@ public class LiveScoreFragment extends Fragment {
         rvLiveScores.setAdapter(liveAdapter);
 
         rvLiveScores.setLayoutManager(new LinearLayoutManager(getContext()));
+
 
         AsyncHttpClient client = new AsyncHttpClient();
 

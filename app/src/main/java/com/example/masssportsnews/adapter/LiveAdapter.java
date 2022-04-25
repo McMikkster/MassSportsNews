@@ -53,9 +53,6 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.ViewHolder>
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-//        ImageView ivHomeTeam;
-//        ImageView ivAwayTeam;
-
         TextView tvHomeTeamName;
         TextView tvAwayTeamName;
         TextView tvHomeScore;
@@ -65,9 +62,6 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.ViewHolder>
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
-//        ivHomeTeam = itemView.findViewById(R.id.ivHomeTeam);
-//        ivAwayTeam = itemView.findViewById(R.id.ivAwayTeam);
 
             tvHomeTeamName = itemView.findViewById(R.id.tvHomeTeam);
             tvAwayTeamName = itemView.findViewById(R.id.tvAwayTeam);

@@ -21,9 +21,6 @@ public class LiveScore
     Boolean complete;
     String commenceTime; // 2020-01-02T23:10:00Z
 
-    @Transient
-    JSONArray scores;
-
     String homeScore;
     String awayScore;
     String lastUpdate;
