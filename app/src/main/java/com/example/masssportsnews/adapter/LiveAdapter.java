@@ -14,8 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.masssportsnews.R;
 import com.example.models.LiveScore;
 
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 
@@ -79,8 +82,10 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.ViewHolder>
         @RequiresApi(api = Build.VERSION_CODES.O)
         public void bind(LiveScore liveScore)
         {
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-            LocalDateTime now = LocalDateTime.now();
+            SimpleDateFormat dtFormat = new SimpleDateFormat("yyyy-MM-dd");
+            Calendar cal = Calendar.getInstance();
+            Date date = cal.getTime();
+            String todaysDate = dtFormat.format(date);
 
             tvHomeTeamName.setText(liveScore.getHomeTeam());
             tvAwayTeamName.setText(liveScore.getAwayTeam());
@@ -88,20 +93,19 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.ViewHolder>
             tvHomeScore.setText(liveScore.getHomeScore());
             tvAwayScore.setText(liveScore.getAwayScore());
 
-            if(liveScore.getCommenceTime().compareTo(dtf.format(now)) > 0 )
+
+            String gameDate = liveScore.getCommenceTime();
+            if(todaysDate.compareTo(gameDate) >= 0)
+                tvCommenceTime.setText("Started: " + gameDate);
+            else
+                tvCommenceTime.setText("Starts: " + gameDate);
+
+
+            if(liveScore.getComplete())
             {
-                tvCommenceTime.setText("Starts " + liveScore.getCommenceTime());
+                tvStatus.setText("Status: Complete");
             }
-            else{
-                tvCommenceTime.setText("Started " + liveScore.getCommenceTime());
-            }
-
-
-
-            //in progress
-            //not started
-            //finished
-            if(liveScore.getComplete() == true)
+            else if(liveScore.getComplete() && todaysDate.compareTo(gameDate) < 0)
             {
                 tvStatus.setText("Status: In-Progress");
             }
@@ -110,5 +114,7 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.ViewHolder>
             }
 
         }
+
+
     }
 }

@@ -26,7 +26,7 @@ public class LiveScore
 
     String homeScore;
     String awayScore;
-
+    String lastUpdate;
 
     public LiveScore() {}
 
@@ -38,20 +38,18 @@ public class LiveScore
         complete = jsonObject.getBoolean("completed");
         commenceTime = jsonObject.getString("commence_time");
 
+        lastUpdate = jsonObject.getString("last_update");
 
-         if(jsonObject.getJSONArray("scores").length() == 0)
+         if(jsonObject.has("scores") && !jsonObject.isNull("scores"))
          {
              homeScore = jsonObject.getJSONArray("scores").getJSONObject(0).getString("score");
              awayScore = jsonObject.getJSONArray("scores").getJSONObject(1).getString("score");
          }
          else
          {
-              homeScore = null;
-              awayScore = null;
+              homeScore = "0";
+              awayScore = "0";
          }
-
-
-
 
 
     }
