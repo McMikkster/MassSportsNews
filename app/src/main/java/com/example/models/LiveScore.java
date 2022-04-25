@@ -1,4 +1,6 @@
 package com.example.models;
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,15 +39,19 @@ public class LiveScore
         commenceTime = jsonObject.getString("commence_time");
 
 
-         if(!jsonObject.getString("last_update").isEmpty()) {
-        homeScore = jsonObject.getJSONArray("scores").getJSONObject(0).getString("score");
-        awayScore = jsonObject.getJSONArray("scores").getJSONObject(1).getString("score");
+         if(jsonObject.getJSONArray("scores").length() == 0)
+         {
+             homeScore = jsonObject.getJSONArray("scores").getJSONObject(0).getString("score");
+             awayScore = jsonObject.getJSONArray("scores").getJSONObject(1).getString("score");
+         }
+         else
+         {
+              homeScore = null;
+              awayScore = null;
+         }
 
-    }
-    if(jsonObject.getString("last_update").isEmpty()) {
-        homeScore = null;
-        awayScore = null;
-    }
+
+
 
 
     }
@@ -55,8 +61,9 @@ public class LiveScore
         List<LiveScore> liveScoreList = new ArrayList<>();
         for(int i = 0; i < liveScoreJsonArray.length(); i++)
         {
-            liveScoreList.add(new LiveScore(liveScoreJsonArray.getJSONObject(i)));
+                liveScoreList.add(new LiveScore(liveScoreJsonArray.getJSONObject(i)));
         }
+
         return liveScoreList;
     }
 

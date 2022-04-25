@@ -14,7 +14,7 @@ import com.example.masssportsnews.R;
 import com.example.masssportsnews.fragments.NewsFragment;
 import com.example.masssportsnews.fragments.LiveScoreFragment;
 import com.example.masssportsnews.fragments.ProfileFragment;
-//import com.example.masssportsnews.fragments.ScannerFragment;
+import com.example.masssportsnews.fragments.ScannerFragment;
 import com.example.masssportsnews.fragments.TicketFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -56,9 +56,9 @@ public class MainActivity extends AppCompatActivity
                     case R.id.action_profile:
                         fragment = new ProfileFragment();
                         break;
-//                    case R.id.action_scanner:
-//                        fragment = new ScannerFragment();
-//                        break;
+                    case R.id.action_scanner:
+                        fragment = new ScannerFragment();
+                        break;
                     default:
                         fragment = new NewsFragment();
                         break;
