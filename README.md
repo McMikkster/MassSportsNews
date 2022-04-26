@@ -28,19 +28,19 @@ Used to see current live scores for sports and highlights for games. Can also be
 
 **Required Must-have Stories**
 
--[x] User logs in to access current games and preference settings
--[x] User can view the score for ongoing games
--[ ] Payment method to purchase tickets
--[x] Profile section to view personal info 
--[x] Section to purchase tickets
--[x] News about upcoming/past games (game info, player info, etc)
+- [x] User logs in to access current games and preference settings
+- [x] User can view the score for ongoing game
+- [ ] Payment method to purchase tickets
+- [x] Profile section to view personal info
+- [x] Section to purchase tickets
+- [x] News about upcoming/past games (game info, player info, etc)
 
 **Optional Nice-to-have Stories**
 
--[ ] Expanded view of ticket and seat placement
--[ ] Samsung and Google play capability
--[x] Barcode scanner for tickets
--[ ] Section with favorite teams
+- [ ] Expanded view of ticket and seat placement
+- [ ] Samsung and Google play capability
+- [x] Barcode scanner for tickets
+- [ ] Section with favorite teams
 
 ### 2. Screen Archetypes
 
