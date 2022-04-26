@@ -19,6 +19,7 @@ public class Ticket {
     int minimumPrice; //getting the minimum within the priceRange
     String genreName;
     String dates;
+    String url;
 
     public Ticket() {
         //Empty constructor
@@ -31,6 +32,14 @@ public class Ticket {
         //  JSONArray classifications= jsonObject.getJSONArray("classifications");
         JSONObject genre = jsonObject.getJSONArray("classifications").getJSONObject(0).getJSONObject("genre");
         name = jsonObject.getString("name");
+
+        JSONArray imageContainer = jsonObject.getJSONArray("images");
+
+        url = jsonObject.getJSONArray("images").getJSONObject(0).getString("url");
+
+
+        Log.i(TAG, "[" + url + "]");
+
 
         genreName = genre.getString("name");
 
@@ -53,11 +62,20 @@ public class Ticket {
         List<Ticket> tickets = new ArrayList<>();
 
         for (int i = 0; i < ticketList.length(); i++) {
+
             JSONArray classifications = ticketList.getJSONObject(i).getJSONArray("classifications");
+
+
             if (!classifications.isNull(0)) {
                 JSONObject segment = classifications.getJSONObject(0).getJSONObject("segment");
                 if (segment.getString("name").equals("Sports")) {
+
+                    JSONArray images = ticketList.getJSONObject(i).getJSONArray("images");
                     Log.i(TAG, "segment: " + segment.getString("name"));
+                    if(!images.isNull(0))
+                    {
+                        Log.i(TAG, "url :" + images.getJSONObject(0).getString("url"));
+                    }
 
                     Ticket ticket = new Ticket(ticketList.getJSONObject(i));
                     tickets.add(ticket);
@@ -81,5 +99,9 @@ public class Ticket {
 
     public String getGenreName() {
         return genreName;
+    }
+
+    public String getUrl() {
+        return url;
     }
 }
