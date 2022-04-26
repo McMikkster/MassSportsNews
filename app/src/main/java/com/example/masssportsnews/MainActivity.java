@@ -2,6 +2,7 @@ package com.example.masssportsnews;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity
 
 
     final FragmentManager fragmentManager = getSupportFragmentManager();
-
+    Toolbar toolbar;
     private BottomNavigationView bottomNavigationView;
 
     @Override
@@ -34,7 +35,8 @@ public class MainActivity extends AppCompatActivity
 
         bottomNavigationView = findViewById(R.id.bottomNavigation);
 
-
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener()
         {
