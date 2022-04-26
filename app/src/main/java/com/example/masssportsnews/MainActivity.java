@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity
                     case R.id.action_live:
                         fragment = new LiveScoreFragment();
                         break;
-
                     case R.id.action_profile:
                         fragment = new ProfileFragment();
                         break;
@@ -64,10 +63,7 @@ public class MainActivity extends AppCompatActivity
                         break;
                 }
 
-
-
                 fragmentManager.beginTransaction().replace(R.id.flContainer,fragment).commit();
-
                 return true;
             }
         });
