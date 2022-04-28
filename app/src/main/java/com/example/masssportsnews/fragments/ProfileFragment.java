@@ -10,11 +10,11 @@ import android.view.ViewGroup;
 
 import com.example.masssportsnews.R;
 
-import static com.example.models.Profile.KEY_ADDRESS;
-import static com.example.models.Profile.KEY_EMAIL;
-import static com.example.models.Profile.KEY_FIRSTNAME;
-import static com.example.models.Profile.KEY_LASTNAME;
-import static com.example.models.Profile.KEY_PHONENUMBER;
+import static com.example.masssportsnews.models.Profile.KEY_ADDRESS;
+import static com.example.masssportsnews.models.Profile.KEY_EMAIL;
+import static com.example.masssportsnews.models.Profile.KEY_FIRSTNAME;
+import static com.example.masssportsnews.models.Profile.KEY_LASTNAME;
+import static com.example.masssportsnews.models.Profile.KEY_PHONENUMBER;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,10 +23,7 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.models.Profile;
-
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import com.example.masssportsnews.models.Profile;
 
 import com.google.android.material.button.MaterialButton;
 import com.parse.FindCallback;

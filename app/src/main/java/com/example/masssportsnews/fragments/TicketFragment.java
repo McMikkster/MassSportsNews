@@ -1,6 +1,5 @@
 package com.example.masssportsnews.fragments;
 
-import android.nfc.Tag;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,19 +11,14 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.widget.Button;
-import android.widget.TextView;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.masssportsnews.R;
 import com.example.masssportsnews.adapter.TicketAdapter;
-import com.example.models.Ticket;
+import com.example.masssportsnews.models.Ticket;
 
 import org.json.JSONArray;
 import org.json.JSONException;

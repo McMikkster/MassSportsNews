@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.masssportsnews.PaymentActivity;
 import com.example.masssportsnews.R;
-import com.example.models.Ticket;
+import com.example.masssportsnews.models.Ticket;
 
 import java.util.List;
 

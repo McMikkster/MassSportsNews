@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.masssportsnews.R;
-import com.example.models.News;
+import com.example.masssportsnews.models.News;
 
 import java.util.List;
 

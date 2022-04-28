@@ -100,7 +100,7 @@ public class LoginActivity extends AppCompatActivity
 
     private void goSignup()
     {
-        Intent i = new Intent(this, SignUp.class);
+        Intent i = new Intent(this, SignupActivity.class);
         startActivity(i);
         finish();
     }

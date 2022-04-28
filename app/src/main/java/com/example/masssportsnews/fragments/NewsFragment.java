@@ -16,10 +16,8 @@ import android.view.ViewGroup;
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.masssportsnews.R;
-import com.example.masssportsnews.adapter.LiveAdapter;
 import com.example.masssportsnews.adapter.NewsAdapter;
-import com.example.models.LiveScore;
-import com.example.models.News;
+import com.example.masssportsnews.models.News;
 
 import org.json.JSONArray;
 import org.json.JSONException;

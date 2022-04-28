@@ -1,10 +1,11 @@
-package com.example.models;
+package com.example.masssportsnews.models;
 
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
 
 @ParseClassName("User")
-public class Profile extends ParseObject {
+public class Profile extends ParseUser {
 
     public static final String KEY_FIRSTNAME = "firstName";
     public static final String KEY_LASTNAME = "lastName";
