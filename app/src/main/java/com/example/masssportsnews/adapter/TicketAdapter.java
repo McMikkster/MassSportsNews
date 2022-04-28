@@ -1,6 +1,7 @@
 package com.example.masssportsnews.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.masssportsnews.PaymentActivity;
 import com.example.masssportsnews.R;
 import com.example.models.Ticket;
 
@@ -82,7 +85,9 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder
                 public void onClick(View view)
                 {
 
-
+                    Intent i = new Intent(context, PaymentActivity.class);
+                    context.startActivity(i);
+                    ((AppCompatActivity)context).finish();
 
 
                 }
