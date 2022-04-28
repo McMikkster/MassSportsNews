@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:text="Celtics VS Suns"
-        android:textSize="48sp" />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tvGenre"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:text="NBA"
-        android:textSize="48sp" />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tvDate"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:text="01/01/2001"
-        android:textSize="48sp" />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tvPrice"
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:text="$50"
-        android:textSize="34sp" />
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/ticketPayBttn"

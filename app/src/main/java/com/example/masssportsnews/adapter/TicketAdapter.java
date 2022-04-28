@@ -76,16 +76,17 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder
             tvPrice = itemView.findViewById(R.id.tvPrice);
             ticketPayBtn = itemView.findViewById(R.id.ticketPayBttn);
 
-//            ticketPayBtn.setOnClickListener(new View.OnClickListener()
-//            {
-//                @Override
-//                public void onClick(View view)
-//                {
-//
-//
-//
-//                }
-//            });
+            ticketPayBtn.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view)
+                {
+
+
+
+
+                }
+            });
 
         }
 
