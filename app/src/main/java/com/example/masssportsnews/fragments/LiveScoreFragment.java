@@ -12,7 +12,7 @@ import android.util.Log;
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.masssportsnews.adapter.LiveAdapter;
-import com.example.models.LiveScore;
+import com.example.masssportsnews.models.LiveScore;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,7 +27,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.example.masssportsnews.R;
 

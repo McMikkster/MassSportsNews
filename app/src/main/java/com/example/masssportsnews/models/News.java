@@ -1,4 +1,4 @@
-package com.example.models;
+package com.example.masssportsnews.models;
 
 import org.json.JSONArray;
 import org.json.JSONException;

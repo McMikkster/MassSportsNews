@@ -1,11 +1,9 @@
-package com.example.models;
-import android.util.Log;
+package com.example.masssportsnews.models;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.parceler.Parcel;
-import org.parceler.Transient;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -7,11 +7,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
-import android.widget.Toast;
 
-import com.example.masssportsnews.R;
 import com.example.masssportsnews.fragments.NewsFragment;
 import com.example.masssportsnews.fragments.LiveScoreFragment;
 import com.example.masssportsnews.fragments.ProfileFragment;
