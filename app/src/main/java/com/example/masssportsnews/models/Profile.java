@@ -12,6 +12,22 @@ public class Profile extends ParseUser {
     public static final String KEY_EMAIL = "email";
     public static final String KEY_PHONENUMBER = "phoneNumber";
     public static final String KEY_ADDRESS = "address";
+    public static final String KEY_PASSWORD = "password";
+
+    public String getKeyUsername()
+    {
+        return getUsername();
+    }
+
+    public void setKeyUsername(String username)
+    {
+        setUsername(username);
+    }
+
+    public void setKeyPassword(String password)
+    {
+        setPassword(password);
+    }
 
     public String getKeyFirstname() {
         return getString(KEY_FIRSTNAME);
@@ -21,7 +37,7 @@ public class Profile extends ParseUser {
     }
 
 
-    public  String getKeyLastname() {
+    public String getKeyLastname() {
         return getString(KEY_LASTNAME);
     }
     public void setKeyLastname(String lastname){
@@ -29,14 +45,14 @@ public class Profile extends ParseUser {
     }
 
 
-    public  String getKeyEmail(){
-        return getString(KEY_EMAIL);
+    public String getKeyEmail(){
+        return getEmail();
     }
     public void setKeyEmail(String email) {
-        put(KEY_EMAIL, email);
+        setEmail(email);
     }
 
-    public  String getKeyPhoneNumber(){
+    public String getKeyPhoneNumber(){
         return getString(KEY_PHONENUMBER);
     }
     public void setKeyPhoneNumber(String phoneNumber){
@@ -44,7 +60,7 @@ public class Profile extends ParseUser {
     }
 
 
-    public  String getKeyAddress(){
+    public String getKeyAddress(){
         return getString(KEY_ADDRESS);
     }
     public void setKeyAddress(String address){

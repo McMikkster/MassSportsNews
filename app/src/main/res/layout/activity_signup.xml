@@ -44,7 +44,6 @@
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tvFirstName"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -54,6 +53,7 @@
             app:boxStrokeColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvFirstName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -63,7 +63,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tvLastName"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -73,6 +72,7 @@
             app:boxStrokeColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvLastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -82,7 +82,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tvEmail"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -92,6 +91,7 @@
             app:boxStrokeColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -101,7 +101,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tvPhoneNumber"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -111,15 +110,30 @@
             app:boxStrokeColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvPhoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
                 android:inputType="phone"
-                android:singleLine="true"/>
+                android:singleLine="true"
+                android:textColor="@color/black" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
+        <EditText
+            android:id="@+id/tvUsername"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="userName"
+            android:layout_marginTop="16dp"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:inputType="text"
+            android:singleLine="true"
+            app:boxStrokeColor="@color/black"/>
+
+
+        <EditText
             android:id="@+id/tvPassword"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -128,19 +142,13 @@
             app:passwordToggleEnabled="true"
             android:layout_marginTop="16dp"
             android:textColorHint="@color/black"
-            app:boxStrokeColor="@color/black">
+            app:boxStrokeColor="@color/black"
+            android:textColor="@color/black"
+            android:inputType="textPassword"
+            android:singleLine="true"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:inputType="textPassword"
-                android:singleLine="true"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tvConfirmPassword"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -151,6 +159,7 @@
             app:boxStrokeColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -160,7 +169,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tvAddress"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -170,6 +178,7 @@
             app:boxStrokeColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
