@@ -1,19 +1,19 @@
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_orange"
+    android:backgroundTint="@color/main_orange"
     android:scrollbars="none"
-    android:background="@color/white"
     tools:context="com.example.masssportsnews.fragments.ProfileFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginStart="22dp"
-        android:layout_marginEnd="22dp">
+        android:layout_marginEnd="22dp"
+        android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -56,53 +56,54 @@
             android:id="@+id/viewLastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LastName"
             android:layout_marginTop="16dp"
+            android:text="LastName"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/viewEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email"
             android:layout_marginTop="16dp"
+            android:text="Email"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/viewPhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PhoneNumber"
             android:layout_marginTop="16dp"
+            android:text="PhoneNumber"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/viewPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Password"
             android:layout_marginTop="16dp"
+            android:inputType="textPassword"
+            android:text="Password"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:inputType="textPassword"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
 
         <TextView
             android:id="@+id/viewAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Address"
             android:layout_marginTop="16dp"
+            android:text="Address"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -113,29 +114,28 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:visibility="invisible"/>
-
-            <Button
-                android:id="@+id/btnEditProfile"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:backgroundTint="@color/black"
-                android:paddingStart="20dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="20dp"
-                android:paddingBottom="20dp"
-                android:text="Edit Profile"
-                app:cornerRadius="10dp" />
-
+                android:visibility="invisible" />
 
 
         </FrameLayout>
 
         <Button
+            android:id="@+id/btnEditProfile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_blue"
+            android:backgroundTint="@color/light_blue"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="20dp"
+            android:text="Edit Profile"
+            app:cornerRadius="10dp" />
+        <Button
             android:id="@+id/btnLogout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/darker_gray"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/dark_blue"
             android:paddingStart="20dp"
             android:paddingTop="10dp"
             android:paddingEnd="20dp"

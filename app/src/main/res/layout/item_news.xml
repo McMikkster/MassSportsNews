@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Title :"
+        android:textColor="@color/dark_blue"
         android:textSize="30sp" />
 
     <TextView
@@ -24,6 +25,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Description :"
+        android:textColor="@color/black"
         android:textSize="20sp" />
 
     <TextView
@@ -31,6 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Byline:"
+        android:textColor="@color/light_blue"
         android:textSize="15sp" />
 
     <TextView
@@ -38,6 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Published date"
+        android:textColor="@color/light_blue"
         android:textSize="15sp" />
 
     <View
