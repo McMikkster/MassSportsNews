@@ -5,9 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="none"
     android:background="@color/main_orange"
-    tools:context=".SignupActivity">
+    tools:context=".EditProfileActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Sign Up"
+            android:text="Edit Profile"
             android:textAlignment="center"
             android:textColor="#1945C8"
             android:textSize="50sp"
@@ -46,18 +45,18 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="first_name"
             android:layout_marginTop="32dp"
+            android:hint="first_name"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tvFirstName"
+                android:id="@+id/editFirst"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
                 android:inputType="text"
-                android:singleLine="true"/>
+                android:singleLine="true"
+                android:textColor="@color/black" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,7 +69,7 @@
             app:boxStrokeColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tvLastName"
+                android:id="@+id/editLast"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -88,7 +87,7 @@
             app:boxStrokeColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tvEmail"
+                android:id="@+id/editEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -106,7 +105,7 @@
             app:boxStrokeColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tvPhoneNumber"
+                android:id="@+id/editPhoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="phone"
@@ -115,21 +114,9 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/tvUsername"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="userName"
-            android:layout_marginTop="16dp"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:inputType="text"
-            android:singleLine="true"
-            app:boxStrokeColor="@color/black"/>
-
 
         <EditText
-            android:id="@+id/tvPassword"
+            android:id="@+id/editPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
@@ -152,7 +139,7 @@
             app:boxStrokeColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tvConfirmPassword"
+                android:id="@+id/editConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -170,7 +157,7 @@
             app:boxStrokeColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tvAddress"
+                android:id="@+id/editAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -184,15 +171,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp">
 
-            <ProgressBar
-                android:id="@+id/signupPB"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_horizontal"
-                android:visibility="invisible"/>
-
             <Button
-                android:id="@+id/btnSignup"
+                android:id="@+id/btnConfirm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#FF0A2583"
@@ -200,18 +180,19 @@
                 android:paddingTop="10dp"
                 android:paddingEnd="20dp"
                 android:paddingBottom="20dp"
-                android:text="Sign Up"
+                android:text="Confirm"
                 app:cornerRadius="10dp" />
 
 
         </FrameLayout>
 
         <Button
-            android:id="@+id/btnSignInHere"
+            android:id="@+id/btnBack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#1556FD"
-            android:text="Already have an account? Sign in!" />
+            android:text="Back" />
 
     </LinearLayout>
+
 </ScrollView>

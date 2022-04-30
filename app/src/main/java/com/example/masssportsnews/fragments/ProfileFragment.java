@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.masssportsnews.EditProfileActivity;
 import com.example.masssportsnews.LoginActivity;
 import com.example.masssportsnews.R;
 
@@ -30,8 +31,6 @@ import com.parse.ParseUser;
 public class ProfileFragment extends Fragment {
 
     public static final String TAG = "ProfileFragment";
-
-
 
     TextView tvProfile;
     TextView viewFirstName;
@@ -69,19 +68,15 @@ public class ProfileFragment extends Fragment {
         viewPassword = view.findViewById(R.id.viewPassword);
         viewAddress = view.findViewById(R.id.viewAddress);
 
-
-
+        //Getting the text and viewing it on the Profile Screen
         viewFirstName.setText("First Name: " +currentUser.get(KEY_FIRSTNAME).toString());
         viewLastName.setText("Last Name: "+currentUser.get(KEY_LASTNAME).toString());
         viewEmail.setText("Email: " + currentUser.get(KEY_EMAIL));
         viewPhoneNumber.setText("Phone Number: " + currentUser.get(KEY_PHONENUMBER).toString());
         viewAddress.setText("Address : " + currentUser.get(KEY_ADDRESS).toString());
-
-        //queryProfile();
-
         btnLogout = view.findViewById(R.id.btnLogout);
+        btnEditProfile = view.findViewById(R.id.btnEditProfile);
 
-        btnLogout = view.findViewById(R.id.btnLogout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,19 +87,15 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        btnEditProfile = view.findViewById(R.id.btnEditProfile);
-
-    }
-
-    protected void queryProfile() {
-
-        ParseUser currentUser = ParseUser.getCurrentUser();
-        currentUser.getUsername();
-        currentUser.getEmail();
-        currentUser.get(KEY_PHONENUMBER);
-        currentUser.get(KEY_ADDRESS);
-
-
+        btnEditProfile.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent i = new Intent(getContext(), EditProfileActivity.class);
+                startActivity(i);
+            }
+        });
 
 
     }

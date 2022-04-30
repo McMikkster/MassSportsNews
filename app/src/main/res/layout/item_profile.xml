@@ -121,7 +121,7 @@
                 android:layout_gravity="center_horizontal"
                 android:visibility="invisible"/>
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/btnEditProfile"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
