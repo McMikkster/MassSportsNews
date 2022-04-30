@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbars="none"
-    android:background="@color/white"
+    android:background="@color/main_orange"
     tools:context=".SignupActivity">
 
     <LinearLayout
@@ -39,7 +39,7 @@
             android:layout_marginTop="24dp"
             android:text="Sign Up"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="#1945C8"
             android:textSize="50sp"
             android:textStyle="bold" />
 
@@ -195,7 +195,7 @@
                 android:id="@+id/btnSignup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="#FF0A2583"
                 android:paddingStart="20dp"
                 android:paddingTop="10dp"
                 android:paddingEnd="20dp"
@@ -203,31 +203,15 @@
                 android:text="Sign Up"
                 app:cornerRadius="10dp" />
 
+
         </FrameLayout>
 
-        <LinearLayout
+        <Button
+            android:id="@+id/btnSignInHere"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="32dp"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Already have an account?"
-                android:textColor="@color/black"
-                android:textSize="14sp"/>
-
-            <TextView
-                android:id="@+id/tvSignInHere"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sign in"
-                android:textColor="@color/black"
-                android:layout_marginStart="10dp"
-                android:textSize="14sp"/>
-        </LinearLayout>
+            android:backgroundTint="#1556FD"
+            android:text="Already have an account? Sign in!" />
 
     </LinearLayout>
 </ScrollView>

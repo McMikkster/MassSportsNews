@@ -27,6 +27,7 @@ import com.example.masssportsnews.models.Profile;
 
 import com.google.android.material.button.MaterialButton;
 import com.parse.FindCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -42,7 +43,7 @@ public class ProfileFragment extends Fragment {
 
     Button btnEditProfile;
 
-    List<Profile> profileList;
+   // List<Profile> profileList;
 
     TextView tvProfile;
     TextView viewFirstName;
@@ -69,7 +70,7 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        profileList = new ArrayList<>();
+        //profileList = new ArrayList<>();
         tvProfile = view.findViewById(R.id.tvProfile);
         viewFirstName = view.findViewById(R.id.viewFirstName);
         viewLastName = view.findViewById(R.id.viewLastName);
@@ -85,33 +86,43 @@ public class ProfileFragment extends Fragment {
 
     protected void queryProfile() {
 
-        ParseQuery<Profile> query = ParseQuery.getQuery(Profile.class);
-        query.include(KEY_FIRSTNAME);
-        query.include(KEY_LASTNAME);
-        query.include(KEY_EMAIL);
-        query.include (KEY_PHONENUMBER);
-        query.include(KEY_ADDRESS);
-        query.whereEqualTo(KEY_FIRSTNAME, ParseUser.getCurrentUser());
-
-        query.findInBackground(new FindCallback<Profile>() {
-            @Override
-            public void done(List<Profile> profile, ParseException e) {
-                if (e != null){
-                    Log.e(TAG, "issue with profile", e);
-                    return;
-                }
-                for(Profile profile1: profile){
-                    Log.i(TAG, "Profile: " + profile1.getKeyFirstname() + ", username: " + ParseUser.getCurrentUser());
-                }
+        //ParseQuery<Profile> query = ParseQuery.getQuery(Profile.class);
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        currentUser.getUsername();
+        currentUser.get(KEY_LASTNAME);
+        currentUser.getEmail();
+        currentUser.get(KEY_PHONENUMBER);
+        currentUser.get(KEY_ADDRESS);
+        //currentUser.(KEY_FIRSTNAME, ParseUser.getCurrentUser());
 
 
-                //   Log.i(TAG, "Profile: " + profile);
-                profileList.addAll(profile);
+
+        viewFirstName.setText(KEY_FIRSTNAME);
+        viewLastName.setText(KEY_LASTNAME);
 
 
-            }
 
-        });
+
+
+//        currentUser.findInBackground(new FindCallback<Profile>() {
+//            @Override
+//            public void done(List<Profile> profile, ParseException e) {
+//                if (e != null){
+//                    Log.e(TAG, "issue with profile", e);
+//                    return;
+//                }
+//                for(Profile profile1: profile){
+//                    Log.i(TAG, "Profile: " + profile1.getKeyFirstname() + ", username: " + ParseUser.getCurrentUser());
+//                }
+//
+//
+//                //   Log.i(TAG, "Profile: " + profile);
+//                profileList.addAll(profile);
+//
+//
+//            }
+//
+//        });
 
 
 

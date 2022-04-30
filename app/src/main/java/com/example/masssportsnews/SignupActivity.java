@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.masssportsnews.models.Profile;
@@ -20,7 +19,7 @@ import com.parse.SignUpCallback;
 
 public class SignupActivity extends AppCompatActivity {
 
-    private TextView tvSignInHere;
+    private Button btnSignInHere;
     private Button btnSignup;
 
     private EditText tvUsername;
@@ -44,16 +43,15 @@ public class SignupActivity extends AppCompatActivity {
         lastname = findViewById(R.id.tvLastName);
         address = findViewById(R.id.tvAddress);
         phone = findViewById(R.id.tvPhoneNumber);
-        tvSignInHere = findViewById(R.id.tvSignInHere);
+        btnSignInHere = findViewById(R.id.btnSignInHere);
         btnSignup = findViewById(R.id.btnSignup);
 
-        tvSignInHere.setOnClickListener(new View.OnClickListener() {
+        btnSignInHere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
-                String username = tvUsername.getText().toString();
-                String password = tvPassword.getText().toString();
-                registration(username, password);
+                Intent i = new Intent(SignupActivity.this, LoginActivity.class);
+                startActivity(i);
                 finish();
             }
         });
@@ -93,34 +91,4 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
     }
-
-    private void registration(String userName, String passWord)
-    {
-        ParseUser user = new ParseUser();
-
-        user.setUsername(userName);
-
-        user.setPassword(passWord);
-
-        user.signUpInBackground(new SignUpCallback()
-        {
-            @Override
-            public void done(ParseException e)
-            {
-                if(e == null)
-                {
-                    Log.i(TAG,"Successfully signed up!");
-                    Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-                    intent.putExtra("username", userName);
-                    startActivity(intent);
-                } else {
-                    Log.i(TAG, "Not successful sign up!");
-                    ParseUser.logOut();
-                    Toast.makeText(SignupActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-    }
-
-
 }
