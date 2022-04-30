@@ -70,6 +70,7 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        ParseUser currentUser = ParseUser.getCurrentUser();
         //profileList = new ArrayList<>();
         tvProfile = view.findViewById(R.id.tvProfile);
         viewFirstName = view.findViewById(R.id.viewFirstName);
@@ -81,7 +82,13 @@ public class ProfileFragment extends Fragment {
         btnEditProfile = view.findViewById(R.id.btnEditProfile);
         btnLogout = view.findViewById(R.id.btnLogout);
 
-        queryProfile();
+        viewFirstName.setText("First Name: " +currentUser.get(KEY_FIRSTNAME).toString());
+        viewLastName.setText("Last Name: "+currentUser.get(KEY_LASTNAME).toString());
+        viewEmail.setText("Email: " + currentUser.get(KEY_EMAIL));
+        viewPhoneNumber.setText("Phone Number: " + currentUser.get(KEY_PHONENUMBER).toString());
+        viewAddress.setText("Address : " + currentUser.get(KEY_ADDRESS).toString());
+
+        //queryProfile();
     }
 
     protected void queryProfile() {
@@ -89,7 +96,6 @@ public class ProfileFragment extends Fragment {
         //ParseQuery<Profile> query = ParseQuery.getQuery(Profile.class);
         ParseUser currentUser = ParseUser.getCurrentUser();
         currentUser.getUsername();
-        currentUser.get(KEY_LASTNAME);
         currentUser.getEmail();
         currentUser.get(KEY_PHONENUMBER);
         currentUser.get(KEY_ADDRESS);

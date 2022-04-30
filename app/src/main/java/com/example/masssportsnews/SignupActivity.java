@@ -25,6 +25,7 @@ public class SignupActivity extends AppCompatActivity {
     private EditText tvUsername;
     private EditText tvPassword;
     private TextInputEditText firstname;
+    private TextInputEditText email;
     private TextInputEditText lastname;
     private TextInputEditText address;
     private TextInputEditText phone;
@@ -41,6 +42,7 @@ public class SignupActivity extends AppCompatActivity {
         tvPassword = findViewById(R.id.tvPassword);
         firstname = findViewById(R.id.tvFirstName);
         lastname = findViewById(R.id.tvLastName);
+        email = findViewById(R.id.tvEmail);
         address = findViewById(R.id.tvAddress);
         phone = findViewById(R.id.tvPhoneNumber);
         btnSignInHere = findViewById(R.id.btnSignInHere);
@@ -65,6 +67,7 @@ public class SignupActivity extends AppCompatActivity {
 
                 user.setUsername(tvUsername.getText().toString());
                 user.setPassword(tvPassword.getText().toString());
+                user.setEmail(email.getText().toString());
                 user.put(Profile.KEY_FIRSTNAME, firstname.getText().toString());
                 user.put(Profile.KEY_LASTNAME, lastname.getText().toString());
                 user.put(Profile.KEY_ADDRESS, address.getText().toString());
