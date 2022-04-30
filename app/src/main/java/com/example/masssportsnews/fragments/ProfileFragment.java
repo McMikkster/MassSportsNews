@@ -40,7 +40,7 @@ public class ProfileFragment extends Fragment {
     public static final String TAG = "ProfileFragment";
 
 
-    MaterialButton btnEditProfile;
+    Button btnEditProfile;
 
     List<Profile> profileList;
 

@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity
 
     Button btnSignup;
 
-    MaterialButton btnSignin;
+    Button btnSignin;
 
     protected void onCreate(Bundle savedInstance)
     {

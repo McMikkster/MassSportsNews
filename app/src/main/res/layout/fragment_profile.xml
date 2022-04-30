@@ -44,7 +44,6 @@
 
         <TextView
             android:id="@+id/viewFirstName"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -55,7 +54,6 @@
 
         <TextView
             android:id="@+id/viewLastName"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="LastName"
@@ -66,7 +64,6 @@
 
         <TextView
             android:id="@+id/viewEmail"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Email"
@@ -77,7 +74,6 @@
 
         <TextView
             android:id="@+id/viewPhoneNumber"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="PhoneNumber"
@@ -88,7 +84,6 @@
 
         <TextView
             android:id="@+id/viewPassword"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Password"
@@ -101,7 +96,6 @@
 
         <TextView
             android:id="@+id/viewAddress"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Address"
@@ -121,7 +115,7 @@
                 android:layout_gravity="center_horizontal"
                 android:visibility="invisible"/>
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/btnEditProfile"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

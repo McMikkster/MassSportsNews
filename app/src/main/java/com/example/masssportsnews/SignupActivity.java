@@ -11,16 +11,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.masssportsnews.models.Profile;
 import com.google.android.material.textfield.TextInputEditText;
 
-import com.example.masssportsnews.models.Profile;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
 public class SignupActivity extends AppCompatActivity {
 
-    TextView tvSignInHere;
+    private TextView tvSignInHere;
     private Button btnSignup;
 
     private EditText tvUsername;

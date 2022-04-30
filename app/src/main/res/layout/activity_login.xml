@@ -62,6 +62,7 @@
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
+            android:textColorHint="#AD515050"
             android:minHeight="48dp" />
 
         <FrameLayout
@@ -76,21 +77,22 @@
                 android:layout_gravity="center_horizontal"
                 android:visibility="invisible" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnSignin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/black"
-                android:paddingStart="20dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="20dp"
-                android:paddingBottom="20dp"
-                android:text="Sign In"
-                app:cornerRadius="10dp" />
+
 
         </FrameLayout>
 
-        <com.google.android.material.button.MaterialButton
+        <Button
+            android:id="@+id/btnSignin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="20dp"
+            android:text="Sign In"
+            app:cornerRadius="10dp" />
+        <Button
             android:id="@+id/btnSignup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
