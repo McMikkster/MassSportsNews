@@ -1,5 +1,6 @@
 package com.example.masssportsnews.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.masssportsnews.LoginActivity;
 import com.example.masssportsnews.R;
 
 import static com.example.masssportsnews.models.Profile.KEY_ADDRESS;
@@ -80,7 +82,7 @@ public class ProfileFragment extends Fragment {
         viewPassword = view.findViewById(R.id.viewPassword);
         viewAddress = view.findViewById(R.id.viewAddress);
         btnEditProfile = view.findViewById(R.id.btnEditProfile);
-        btnLogout = view.findViewById(R.id.btnLogout);
+
 
         viewFirstName.setText("First Name: " +currentUser.get(KEY_FIRSTNAME).toString());
         viewLastName.setText("Last Name: "+currentUser.get(KEY_LASTNAME).toString());
@@ -89,46 +91,28 @@ public class ProfileFragment extends Fragment {
         viewAddress.setText("Address : " + currentUser.get(KEY_ADDRESS).toString());
 
         //queryProfile();
+
+        btnLogout = view.findViewById(R.id.btnLogout);
+
+        btnLogout = view.findViewById(R.id.btnLogout);
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ParseUser.logOut();
+                ParseUser currentUser = ParseUser.getCurrentUser(); // this will now be null
+                Intent i = new Intent(getContext(), LoginActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     protected void queryProfile() {
 
-        //ParseQuery<Profile> query = ParseQuery.getQuery(Profile.class);
         ParseUser currentUser = ParseUser.getCurrentUser();
         currentUser.getUsername();
         currentUser.getEmail();
         currentUser.get(KEY_PHONENUMBER);
         currentUser.get(KEY_ADDRESS);
-        //currentUser.(KEY_FIRSTNAME, ParseUser.getCurrentUser());
-
-
-
-        viewFirstName.setText(KEY_FIRSTNAME);
-        viewLastName.setText(KEY_LASTNAME);
-
-
-
-
-
-//        currentUser.findInBackground(new FindCallback<Profile>() {
-//            @Override
-//            public void done(List<Profile> profile, ParseException e) {
-//                if (e != null){
-//                    Log.e(TAG, "issue with profile", e);
-//                    return;
-//                }
-//                for(Profile profile1: profile){
-//                    Log.i(TAG, "Profile: " + profile1.getKeyFirstname() + ", username: " + ParseUser.getCurrentUser());
-//                }
-//
-//
-//                //   Log.i(TAG, "Profile: " + profile);
-//                profileList.addAll(profile);
-//
-//
-//            }
-//
-//        });
 
 
 
