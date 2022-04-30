@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
     android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
@@ -19,6 +20,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:text="Celtics VS Suns"
+        android:textColor="@color/dark_blue"
         android:textSize="24sp" />
 
     <TextView
@@ -27,6 +29,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:text="NBA"
+        android:textColor="@color/light_blue"
         android:textSize="24sp" />
 
     <TextView
@@ -35,6 +38,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:text="01/01/2001"
+        android:textColor="@color/black"
         android:textSize="24sp" />
 
     <TextView
@@ -43,12 +47,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:text="$50"
+        android:textColor="@color/black"
         android:textSize="24sp" />
 
     <Button
         android:id="@+id/ticketPayBttn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/light_blue"
         android:text="Buy" />
 
 </LinearLayout>

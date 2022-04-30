@@ -21,21 +21,10 @@ import static com.example.masssportsnews.models.Profile.KEY_PHONENUMBER;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.masssportsnews.models.Profile;
-
-import com.google.android.material.button.MaterialButton;
-import com.parse.FindCallback;
-import com.parse.Parse;
-import com.parse.ParseException;
-import com.parse.ParseQuery;
 import com.parse.ParseUser;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class ProfileFragment extends Fragment {
@@ -43,9 +32,6 @@ public class ProfileFragment extends Fragment {
     public static final String TAG = "ProfileFragment";
 
 
-    Button btnEditProfile;
-
-   // List<Profile> profileList;
 
     TextView tvProfile;
     TextView viewFirstName;
@@ -55,6 +41,7 @@ public class ProfileFragment extends Fragment {
     TextView viewPassword;
     TextView viewAddress;
     Button btnLogout;
+    Button btnEditProfile;
 
     public ProfileFragment()
     {
@@ -81,7 +68,7 @@ public class ProfileFragment extends Fragment {
         viewPhoneNumber = view.findViewById(R.id.viewPhoneNumber);
         viewPassword = view.findViewById(R.id.viewPassword);
         viewAddress = view.findViewById(R.id.viewAddress);
-        btnEditProfile = view.findViewById(R.id.btnEditProfile);
+
 
 
         viewFirstName.setText("First Name: " +currentUser.get(KEY_FIRSTNAME).toString());
@@ -104,6 +91,9 @@ public class ProfileFragment extends Fragment {
                 startActivity(i);
             }
         });
+
+        btnEditProfile = view.findViewById(R.id.btnEditProfile);
+
     }
 
     protected void queryProfile() {
