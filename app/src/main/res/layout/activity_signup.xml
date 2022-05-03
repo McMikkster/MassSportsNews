@@ -115,32 +115,41 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/tvUsername"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="userName"
+            android:hint="username"
             android:layout_marginTop="16dp"
             android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:inputType="text"
-            android:singleLine="true"
-            app:boxStrokeColor="@color/black"/>
+            app:boxStrokeColor="@color/black">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:inputType="text"
+                android:singleLine="true"/>
 
-        <EditText
-            android:id="@+id/tvPassword"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
-            app:passwordToggleEnabled="true"
+            android:hint="password"
             android:layout_marginTop="16dp"
             android:textColorHint="@color/black"
-            app:boxStrokeColor="@color/black"
-            android:textColor="@color/black"
-            android:inputType="textPassword"
-            android:singleLine="true"/>
+            app:boxStrokeColor="@color/black">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvPasswordSignup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:inputType="text"
+                android:singleLine="true"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -192,7 +201,7 @@
                 android:visibility="invisible"/>
 
             <Button
-                android:id="@+id/btnSignup"
+                android:id="@+id/btnSignupActivity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#FF0A2583"

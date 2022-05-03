@@ -10,9 +10,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.masssportsnews.R;
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.textfield.TextInputLayout;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -40,11 +37,11 @@ public class LoginActivity extends AppCompatActivity
         setContentView(R.layout.activity_login);
 
         tvUsername = findViewById(R.id.tvUsername);
-        tvPassword = findViewById(R.id.tvPassword);
+        tvPassword = findViewById(R.id.tvPasswordSignup);
 
         btnSignin = findViewById(R.id.btnSignin);
 
-        btnSignup = findViewById(R.id.btnSignup);
+        btnSignup = findViewById(R.id.btnSignupActivity);
 
         btnSignup.setOnClickListener(new View.OnClickListener()
         {

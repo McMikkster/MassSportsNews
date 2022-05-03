@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.masssportsnews.models.Profile;
@@ -22,8 +21,9 @@ public class SignupActivity extends AppCompatActivity {
     private Button btnSignInHere;
     private Button btnSignup;
 
-    private EditText tvUsername;
-    private EditText tvPassword;
+    private TextInputEditText tvUsername;
+    private TextInputEditText tvPassword;
+    private TextInputEditText tvConfirmPassword;
     private TextInputEditText firstname;
     private TextInputEditText email;
     private TextInputEditText lastname;
@@ -39,14 +39,15 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         tvUsername = findViewById(R.id.tvUsername);
-        tvPassword = findViewById(R.id.tvPassword);
+        tvPassword = findViewById(R.id.tvPasswordSignup);
         firstname = findViewById(R.id.tvFirstName);
         lastname = findViewById(R.id.tvLastName);
         email = findViewById(R.id.tvEmail);
         address = findViewById(R.id.tvAddress);
         phone = findViewById(R.id.tvPhoneNumber);
         btnSignInHere = findViewById(R.id.btnSignInHere);
-        btnSignup = findViewById(R.id.btnSignup);
+        btnSignup = findViewById(R.id.btnSignupActivity);
+        tvConfirmPassword = findViewById(R.id.tvConfirmPassword);
 
         btnSignInHere.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,5 +94,7 @@ public class SignupActivity extends AppCompatActivity {
                 });
             }
         });
+        };
     }
-}
+
+

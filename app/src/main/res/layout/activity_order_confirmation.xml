@@ -51,6 +51,14 @@
             android:textColor="@color/black"
             android:textSize="20sp" />
 
+        <Button
+            android:id="@+id/orderconfirmationBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FF0A2583"
+            android:text="Back"
+            android:textColor="@color/main_orange" />
+
 
     </LinearLayout>
 </RelativeLayout>

@@ -55,7 +55,7 @@
 
 
         <EditText
-            android:id="@+id/tvPassword"
+            android:id="@+id/tvPasswordSignup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -65,7 +65,7 @@
             android:textColorHint="#AD515050" />
 
         <Button
-            android:id="@+id/btnSignup"
+            android:id="@+id/btnSignupActivity"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="#1556FD"
