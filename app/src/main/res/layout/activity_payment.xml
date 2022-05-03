@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_orange"
     android:scrollbars="none"
-    android:background="@color/white"
     tools:context=".PaymentActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginStart="22dp"
-        android:layout_marginEnd="22dp">
+        android:layout_marginEnd="22dp"
+        android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -39,7 +38,7 @@
             android:layout_marginTop="24dp"
             android:text="Payment"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="#1945C8"
             android:textSize="50sp"
             android:textStyle="bold" />
 
@@ -68,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:hint="Name on Card"
-            android:textColorHint="@color/black"
+            android:textColorHint="#1945C8"
             app:boxStrokeColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -76,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:singleLine="true"
-                android:textColor="@color/black" />
+                android:textColor="#3093CF" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -84,17 +83,17 @@
             android:id="@+id/tvCarNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Card Number"
             android:layout_marginTop="16dp"
-            android:textColorHint="@color/black"
+            android:hint="Card Number"
+            android:textColorHint="#1945C8"
             app:boxStrokeColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
                 android:inputType="number"
-                android:singleLine="true"/>
+                android:singleLine="true"
+                android:textColor="#3093CF" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -102,17 +101,17 @@
             android:id="@+id/tvExpiryDAte"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="MM/YY"
             android:layout_marginTop="16dp"
-            android:textColorHint="@color/black"
+            android:hint="MM/YY"
+            android:textColorHint="#1945C8"
             app:boxStrokeColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
                 android:inputType="number"
-                android:singleLine="true"/>
+                android:singleLine="true"
+                android:textColor="#3093CF" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -120,17 +119,17 @@
             android:id="@+id/tvCVV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="CVV"
             android:layout_marginTop="16dp"
-            android:textColorHint="@color/black"
+            android:hint="CVV"
+            android:textColorHint="#1945C8"
             app:boxStrokeColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
                 android:inputType="number"
-                android:singleLine="true"/>
+                android:singleLine="true"
+                android:textColor="#3093CF" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -138,20 +137,19 @@
             android:id="@+id/tvZipCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Zip Code"
             android:layout_marginTop="16dp"
-            android:textColorHint="@color/black"
+            android:hint="Zip Code"
+            android:textColorHint="#1945C8"
             app:boxStrokeColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
                 android:inputType="number"
-                android:singleLine="true"/>
+                android:singleLine="true"
+                android:textColor="#3093CF" />
 
         </com.google.android.material.textfield.TextInputLayout>
-
 
 
         <FrameLayout
@@ -164,22 +162,22 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:visibility="invisible"/>
+                android:visibility="invisible" />
 
             <Button
                 android:id="@+id/btnPlacePayment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="#1945C8"
                 android:paddingStart="20dp"
                 android:paddingTop="10dp"
                 android:paddingEnd="20dp"
                 android:paddingBottom="20dp"
                 android:text="Place Payment"
+                android:textColor="@color/main_orange"
                 app:cornerRadius="10dp" />
 
         </FrameLayout>
-
 
 
     </LinearLayout>
