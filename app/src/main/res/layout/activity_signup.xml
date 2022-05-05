@@ -16,20 +16,19 @@
         android:layout_marginStart="22dp"
         android:layout_marginEnd="22dp">
 
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="211dp"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:src="@drawable/masssportslogo" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp">
 
-            <ImageView
-                android:id="@+id/ivLogo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@drawable/ic_launcher_foreground" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
